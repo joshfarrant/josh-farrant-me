@@ -1,0 +1,29 @@
+$header-width: 980px;
+$header-height: 500px;
+$project-width: 980px;
+$about-width: 680px;
+
+$col-main: #ffcc00;
+$col-gray: #666666;
+
+$media-sm: 768px;
+$media-md: 992px;
+$media-lg: 1200px;
+
+$hr: 1px solid #eee;
+
+@mixin box-shadow($top, $left, $blur, $color) {
+  -webkit-box-shadow: $top $left $blur $color;
+  -moz-box-shadow: $top $left $blur $color;
+  box-shadow: $top $left $blur $color;
+}
+
+@mixin transition($attr, $time, $easing) {
+  -webkit-transition: $attr $time $easing;
+  -moz-transition: $attr $time $easing;
+  transition: $attr $time $easing;
+}
+
+@mixin gradient() {
+  background: linear-gradient(180deg, #242424, #000000);
+}

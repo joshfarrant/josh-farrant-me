@@ -1,0 +1,276 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);");
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Lato";
+  letter-spacing: 1px;
+  list-style: none;
+  text-decoration: none; }
+
+#container {
+  width: 100%; }
+
+/*************
+Main Structure
+*************/
+#header {
+  width: 100%;
+  background-color: black;
+  margin-bottom: 80px;
+  height: 500px; }
+  #header #header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 980px;
+    margin: 0 auto;
+    pointer-events: none; }
+  #header #header-content {
+    position: relative;
+    left: 0;
+    max-width: 980px;
+    margin: 0 auto;
+    color: white; }
+
+#header-particles {
+  height: 500px;
+  width: 100%; }
+
+#banner {
+  padding: 20px 0;
+  margin: 0 10px;
+  border-bottom: 1px solid #eee;
+  height: 20px; }
+  #banner a {
+    color: white;
+    text-decoration: none;
+    pointer-events: auto;
+    cursor: pointer;
+    vertical-align: bottom; }
+
+#banner-left {
+  float: left;
+  width: 50%;
+  height: 23px;
+  position: relative; }
+  #banner-left a {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-decoration: none;
+    color: white;
+    font-family: "Merriweather"; }
+    #banner-left a #surname {
+      font-family: "Merriweather"; }
+
+#banner-right {
+  width: 50%;
+  float: left; }
+  #banner-right ul {
+    float: right; }
+    #banner-right ul li {
+      display: inline;
+      font-size: 22px;
+      line-height: 1; }
+
+#hero {
+  padding-top: 120px;
+  text-align: center;
+  text-transform: uppercase; }
+  #hero h1 {
+    margin: 0;
+    font-size: 48px;
+    text-shadow: 0 1px 8px #000; }
+  #hero #hero-actions {
+    margin-top: 40px; }
+  #hero .hero-action {
+    margin: 5px; }
+
+#about {
+  width: 100%; }
+  #about #info {
+    max-width: 880px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+    border-bottom: 1px solid #eee; }
+    #about #info p {
+      font-size: 22px; }
+
+#projects {
+  width: 100%;
+  margin-top: 60px; }
+  #projects h2 {
+    height: 50px; }
+  #projects .project {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px; }
+    #projects .project:last-of-type {
+      border: none;
+      padding-bottom: 00px; }
+  #projects .project-image {
+    width: 34%;
+    float: left;
+    padding: 0 2%; }
+    #projects .project-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 18px auto auto auto; }
+      #projects .project-image img#clicky {
+        width: 235px;
+        -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); }
+      #projects .project-image img#gifpro {
+        width: 300px; }
+  #projects .project-info {
+    width: 59%;
+    float: left;
+    height: auto;
+    padding-left: 2%; }
+  #projects h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 1em 0; }
+  #projects p {
+    margin: 1em 0; }
+  #projects .project-button {
+    text-align: center; }
+    #projects .project-button a {
+      color: black;
+      text-align: center;
+      margin: 0 auto;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 3px;
+      border: 2px solid #666666;
+      background-color: #ffcc00; }
+
+footer {
+  width: 100%;
+  min-height: 500px;
+  height: auto;
+  padding: 30px 0;
+  margin-top: 80px;
+  background-color: black;
+  color: white; }
+  footer #footer-container {
+    max-width: 980px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 0 20px; }
+  footer h2 {
+    height: 75px; }
+  footer .footer-split {
+    float: left;
+    width: 50%; }
+    footer .footer-split * {
+      font-size: 18px;
+      line-height: 2;
+      text-decoration: none; }
+
+#footer-left * {
+  color: white; }
+#footer-left a {
+  font-family: "Merriweather"; }
+#footer-left #contact i {
+  margin-right: 10px;
+  color: #ffcc00; }
+
+#footer-right input,
+#footer-right textarea {
+  display: block;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+  padding: 0 10px; }
+#footer-right textarea {
+  resize: none; }
+#footer-right fieldset {
+  border: none; }
+#footer-right label {
+  text-transform: uppercase;
+  display: block;
+  color: white; }
+#footer-right #footer-submit {
+  margin-top: 10px; }
+
+/*************
+Useful Classes
+*************/
+span.button {
+  text-decoration: none;
+  background-color: #ffcc00;
+  color: black;
+  border-radius: 1px;
+  border-bottom: 5px solid #b38f00;
+  padding: 10px;
+  pointer-events: auto;
+  cursor: pointer;
+  text-transform: uppercase; }
+  span.button:hover, span.button:focus {
+    color: white;
+    -webkit-transition: color 0.1s ease-out;
+    -moz-transition: color 0.1s ease-out;
+    transition: color 0.1s ease-out; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+a.highlight {
+  text-decoration: none;
+  color: #ffcc00;
+  border-bottom: 1px #ffcc00 dotted;
+  font-family: 'Merriweather'; }
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 6px; }
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666666;
+  font-family: 'Merriweather'; }
+
+/*************
+Media Queries
+*************/
+@media screen and (max-width: 64em) {
+  h1#tagline {
+    font-size: 38px; } }
+@media screen and (max-width: 48em) {
+  h1#tagline {
+    font-size: 27px; }
+
+  #info p {
+    font-size: 18px !important; } }
+@media screen and (max-width: 35.5em) {
+  #projects .project .project-info {
+    border-left: none !important;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    width: 100% !important; }
+  #projects .project .project-image {
+    width: 100% !important;
+    margin-bottom: 20px; }
+
+  footer #footer-left {
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    border-color: #ffcc00; }
+  footer #footer-right {
+    width: 100%; } }
+
+/*# sourceMappingURL=style.css.map */
