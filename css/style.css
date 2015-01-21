@@ -113,12 +113,13 @@ Main Structure
   #projects .project-image {
     width: 34%;
     float: left;
-    padding: 0 2%; }
+    padding: 0 2%;
+    margin-top: 69px; }
     #projects .project-image img {
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 18px auto auto auto; }
+      margin: auto; }
       #projects .project-image img#clicky {
         width: 235px;
         -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
@@ -132,9 +133,13 @@ Main Structure
     height: auto;
     padding-left: 2%; }
   #projects h3 {
-    text-transform: uppercase;
+    color: #666;
+    font-family: "Lato";
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
     margin: 1em 0; }
   #projects p {
     margin: 1em 0; }

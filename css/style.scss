@@ -142,11 +142,12 @@ Main Structure
     width: 34%;
     float: left;
     padding: 0 2%;
+    margin-top: 69px;
     img {
       max-width: 100%;
       height: auto;
       display: block;
-      margin: 18px auto auto auto;
+      margin: auto;
       &#clicky {
         width: 235px;
         @include box-shadow(0px, 0px, 15px, rgba(0,0,0,0.5));
@@ -165,9 +166,13 @@ Main Structure
   }
 
   h3 {
-    text-transform: uppercase;
+    color: #666;
+    font-family: "Lato";
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
+    text-align: center;
+    border-bottom: $hr;
+    padding-bottom: 20px;
     margin: 1em 0;
   }
   p {
