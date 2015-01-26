@@ -1,4 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800");
 * {
   padding: 0px;
   margin: 0px;
@@ -60,9 +61,8 @@ Main Structure
     left: 0px;
     text-decoration: none;
     color: white;
-    font-family: "Merriweather"; }
-    #banner-left a #surname {
-      font-family: "Merriweather"; }
+    font-family: "Merriweather";
+    font-weight: 300; }
 
 #banner-right {
   width: 50%;
@@ -102,6 +102,7 @@ Main Structure
   width: 100%;
   margin-top: 60px; }
   #projects h2 {
+    color: #444444;
     height: 50px; }
   #projects .project {
     max-width: 980px;
@@ -133,10 +134,9 @@ Main Structure
     height: auto;
     padding-left: 2%; }
   #projects h3 {
-    color: #666;
-    font-family: "Lato";
-    font-weight: 400;
-    font-size: 22px;
+    color: #444444;
+    font-weight: 300;
+    font-size: 24px;
     text-align: center;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
@@ -152,7 +152,7 @@ Main Structure
       padding: 10px;
       text-decoration: none;
       border-radius: 3px;
-      border: 2px solid #666666;
+      border: 2px solid #444444;
       background-color: #ffcc00; }
 
 footer {
@@ -233,19 +233,22 @@ a.highlight {
   text-decoration: none;
   color: #ffcc00;
   border-bottom: 1px #ffcc00 dotted;
-  font-family: 'Merriweather'; }
+  font-family: 'Merriweather';
+  font-weight: 300; }
 
 h2 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 300;
-  letter-spacing: 6px; }
+  letter-spacing: 6px;
+  font-size: 32px; }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
-  color: #666666;
-  font-family: 'Merriweather'; }
+  color: #444444;
+  font-family: 'Merriweather';
+  font-weight: 300; }
 
 /*************
 Media Queries

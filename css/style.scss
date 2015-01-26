@@ -74,9 +74,7 @@ Main Structure
     text-decoration: none;
     color: white;
     font-family: "Merriweather";
-    #surname {
-      font-family: "Merriweather";
-    }
+    font-weight: 300;
   }
 }
 #banner-right {
@@ -127,6 +125,7 @@ Main Structure
   width: 100%;
   margin-top: 60px;
   h2 {
+    color: $col-gray;
     height: 50px;
   }
   .project {
@@ -166,10 +165,9 @@ Main Structure
   }
 
   h3 {
-    color: #666;
-    font-family: "Lato";
-    font-weight: 400;
-    font-size: 22px;
+    color: $col-gray;
+    font-weight: 300;
+    font-size: 24px;
     text-align: center;
     border-bottom: $hr;
     padding-bottom: 20px;
@@ -295,6 +293,7 @@ a.highlight {
   color: $col-main;
   border-bottom: 1px $col-main dotted;
   font-family: 'Merriweather';
+  font-weight: 300;
 }
 
 h2 {
@@ -302,13 +301,15 @@ h2 {
   text-align: center;
   font-weight: 300;
   letter-spacing: 6px;
+  font-size: 32px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: $col-gray;
   font-family: 'Merriweather';
+  font-weight: 300;
 }
 
 /*************
