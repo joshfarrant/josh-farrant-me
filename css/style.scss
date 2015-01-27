@@ -4,7 +4,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  font-family: "Lato";
+  font-family: $font-sans;
   letter-spacing: 1px;
   list-style: none;
   text-decoration: none;
@@ -44,14 +44,15 @@ Main Structure
 #header-particles {
   height: $header-height;
   width: 100%;
-  // background-image: linear-gradient(to bottom, transparent, rgba($col-main, 0.25) 100%);
+  background-image: linear-gradient(to bottom, transparent, rgba($col-main, 0.10) 100%);
 }
 
 
 #banner {
-  padding: 20px 0;
-  margin: 0 10px;
-  border-bottom: 1px solid #eee;
+  font-size: 18px;
+  padding: 20px 10px;
+  border-bottom: 2px solid rgba($col-main, 0.5);
+  background-color: rgba(black, 0.75);
   height: 20px;
   a {
     color: white;
@@ -73,8 +74,8 @@ Main Structure
     left: 0px;
     text-decoration: none;
     color: white;
-    font-family: "Merriweather";
-    font-weight: 300;
+    font-family: $font-serif;
+    font-weight: 700;
   }
 }
 #banner-right {
@@ -176,19 +177,6 @@ Main Structure
   p {
     margin: 1em 0;
   }
-  .project-button {
-    text-align: center;
-    a {
-    color: black;
-    text-align: center;
-    margin: 0 auto;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 3px;
-    border: 2px solid $col-gray;
-    background-color: $col-main;
-    }
-  }
 }
 
 footer {
@@ -221,11 +209,16 @@ footer {
 }
 
 #footer-left {
-  * {
+  *:not(i) {
     color: white;
+    font-family: $font-serif;
   }
   a {
-    font-family: "Merriweather";
+    &:hover,
+    &:focus {
+      color: lighten($col-main, 15%);
+      @include transition(color, 0.15s, ease-out);
+    }
   }
   #contact {
     i {
@@ -247,6 +240,7 @@ footer {
   }
   textarea {
     resize: none;
+    margin-bottom: 25px;
   }
   fieldset {
     border: none;
@@ -257,7 +251,8 @@ footer {
     color: white;
   }
   #footer-submit {
-    margin-top: 10px;
+    font-weight: 400;
+    margin-top: 30px;
   }
 }
 
@@ -267,18 +262,19 @@ Useful Classes
 
 span.button {
   text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
   background-color: $col-main;
-  color: black;
-  border-radius: 1px;
-  border-bottom: 5px solid darken($col-main, 15%);
+  color: white;
+  border-radius: 3px;
+  border: 2px solid darken($col-main, 0%);
   padding: 10px;
   pointer-events: auto;
   cursor: pointer;
   text-transform: uppercase;
   &:hover,
   &:focus {
-    color: white;
-    @include transition(color, 0.1s, ease-out);
+    @include box-shadow(0px, 0px, 15px, $col-main);
   }
 }
 
@@ -291,9 +287,14 @@ span.button {
 a.highlight {
   text-decoration: none;
   color: $col-main;
-  border-bottom: 1px $col-main dotted;
-  font-family: 'Merriweather';
-  font-weight: 300;
+  font-family: $font-serif;
+  font-weight: 700;
+  border-bottom: 2px solid rgba($col-main, 0);
+  &:hover,
+  &:focus {
+    border-color: rgba($col-main, 1);
+    @include transition(border-color, 0.2s, ease-out);
+  }
 }
 
 h2 {
@@ -308,7 +309,7 @@ p {
   font-size: 18px;
   line-height: 1.5;
   color: $col-gray;
-  font-family: 'Merriweather';
+  font-family: $font-serif;
   font-weight: 300;
 }
 

@@ -14,7 +14,7 @@ function setParticles(id) {
       line_linked: {
         enable_auto: true,
         distance: 100,
-        color: '#fff',
+        color: '#19B5FE',
         opacity: 0.7,
         width: 1,
         condensed_mode: {
