@@ -76,7 +76,7 @@ Main Structure
       line-height: 1; }
 
 #hero {
-  padding-top: 120px;
+  padding: 120px 20px 0px 20px;
   text-align: center;
   text-transform: uppercase; }
   #hero h1 {
@@ -89,12 +89,13 @@ Main Structure
     margin: 5px; }
 
 #about {
-  width: 100%; }
+  width: 100%;
+  margin: 0 auto; }
   #about #info {
     max-width: 880px;
     text-align: center;
     margin: 0 auto;
-    padding: 30px 20px 60px 20px;
+    padding: 30px 0 60px 0;
     border-bottom: 1px solid #eee; }
     #about #info p {
       font-size: 22px; }
@@ -115,7 +116,6 @@ Main Structure
   #projects .project-image {
     width: 34%;
     float: left;
-    padding: 0 2%;
     margin-top: 69px; }
     #projects .project-image img {
       max-width: 100%;
@@ -132,8 +132,7 @@ Main Structure
   #projects .project-info {
     width: 59%;
     float: left;
-    height: auto;
-    padding-left: 2%; }
+    height: auto; }
   #projects h3 {
     color: #444444;
     font-weight: 300;
@@ -257,22 +256,53 @@ Media Queries
 *************/
 @media screen and (max-width: 64em) {
   h1#tagline {
-    font-size: 38px; } }
+    font-size: 38px; }
+
+  #projects #projects-list-title {
+    font-size: 38px; }
+  #projects .project-image {
+    margin-right: 2%; }
+  #projects .project-info {
+    margin-left: 2%; } }
 @media screen and (max-width: 48em) {
-  h1#tagline {
+  #header {
+    margin-bottom: 40px; }
+
+  #about #info {
+    margin: 0 20px; }
+
+  #projects #projects-list-title {
     font-size: 27px; }
+  #projects .project {
+    padding-bottom: 20px; }
+  #projects .project-image {
+    margin-right: 2%; }
+  #projects .project-info {
+    margin-left: 2%; }
 
   #info p {
     font-size: 18px !important; } }
 @media screen and (max-width: 35.5em) {
+  #header {
+    margin-bottom: 30px; }
+    #header h1#tagline {
+      font-size: 27px !important; }
+
+  #projects #projects-list-title {
+    margin-bottom: 20px; }
+    #projects #projects-list-title h2 {
+      font-size: 27px; }
   #projects .project .project-info {
     border-left: none !important;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
-    width: 100% !important; }
-  #projects .project .project-image {
     width: 100% !important;
-    margin-bottom: 20px; }
+    margin-left: 0; }
+  #projects .project .project-image {
+    margin-right: 0;
+    width: 100% !important;
+    margin-bottom: 40px;
+    margin-top: 0px; }
 
   footer #footer-left {
     width: 100%;

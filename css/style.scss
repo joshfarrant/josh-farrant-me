@@ -92,7 +92,7 @@ Main Structure
 }
 
 #hero {
-  padding-top: 120px;
+  padding: 120px 20px 0px 20px;
   text-align: center;
   text-transform: uppercase;
   h1 {
@@ -110,11 +110,12 @@ Main Structure
 
 #about {
   width: 100%;
+  margin: 0 auto;
   #info {
     max-width: 880px;
     text-align: center;
     margin: 0 auto;
-    padding: 30px 20px 60px 20px;
+    padding: 30px 0 60px 0;
     border-bottom: $hr;
     p {
       font-size: 22px;
@@ -141,7 +142,6 @@ Main Structure
   .project-image {
     width: 34%;
     float: left;
-    padding: 0 2%;
     margin-top: 69px;
     img {
       max-width: 100%;
@@ -162,7 +162,6 @@ Main Structure
     width: 59%;
     float: left;
     height: auto;
-    padding-left: 2%;
   }
 
   h3 {
@@ -323,6 +322,18 @@ Media Queries
     font-size: 38px;
   }
 
+  #projects {
+    #projects-list-title {
+      font-size: 38px;
+    }
+    .project-image {
+      margin-right: 2%;
+    }
+    .project-info {
+      margin-left: 2%;
+    }
+  }
+
   #footer-container h2,
 
   #about h2 {
@@ -333,8 +344,27 @@ Media Queries
 
 @media screen and (max-width: 48em) {
 
-  h1#tagline {
-    font-size: 27px;
+  #header {
+    margin-bottom: 40px;
+  }
+
+  #about #info {
+    margin: 0 20px;
+  }
+
+  #projects {
+    #projects-list-title {
+      font-size: 27px;
+    }
+    .project {
+      padding-bottom: 20px;
+    }
+    .project-image {
+      margin-right: 2%;
+    }
+    .project-info {
+      margin-left: 2%;
+    }
   }
 
   #footer-container h2,
@@ -352,13 +382,20 @@ Media Queries
 }
 
 @media screen and (max-width: 35.5em) {
-  #info {
-    p {
-
+  #header {
+    margin-bottom: 30px;
+    h1#tagline {
+      font-size: 27px !important;
     }
   }
 
   #projects {
+    #projects-list-title {
+      margin-bottom: 20px;
+      h2 {
+        font-size: 27px;
+      }
+    }
     .project {
       h3 {
         // font-size: 16px;
@@ -368,10 +405,13 @@ Media Queries
         border-bottom: $hr;
         padding-bottom: 20px;
         width: 100% !important;
+        margin-left: 0;
       }
       .project-image {
+        margin-right: 0;
         width: 100% !important;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        margin-top: 0px;
       }
     }
   }
