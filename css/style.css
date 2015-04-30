@@ -129,6 +129,8 @@ Main Structure
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); }
       #projects .project-image img#gifpro {
         width: 300px; }
+      #projects .project-image img#hue {
+        width: 300px; }
   #projects .project-info {
     width: 59%;
     float: left;
@@ -303,6 +305,9 @@ Media Queries
     width: 100% !important;
     margin-bottom: 40px;
     margin-top: 0px; }
+  #projects .project.project-hue .project-info {
+    position: relative;
+    top: -100px; }
 
   footer #footer-left {
     width: 100%;

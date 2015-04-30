@@ -155,7 +155,9 @@ Main Structure
       &#gifpro {
         width: 300px;
       }
-
+      &#hue {
+        width: 300px;
+      }
     }
   }
   .project-info {
@@ -412,6 +414,10 @@ Media Queries
         width: 100% !important;
         margin-bottom: 40px;
         margin-top: 0px;
+      }
+      &.project-hue .project-info {
+        position: relative;
+        top: -100px;
       }
     }
   }
