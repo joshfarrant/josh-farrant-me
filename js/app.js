@@ -6,7 +6,7 @@ function setParticles(id) {
     },
     particles: {
       color: '#fff',
-      shape: 'circle', // "circle", "edge" or "triangle"
+      shape: 'circle', // 'circle', 'edge' or 'triangle'
       opacity: 0.5,
       size: 4,
       size_random: true,
@@ -33,7 +33,7 @@ function setParticles(id) {
       mouse: {
         distance: 250
       },
-      detect_on: 'canvas', // "canvas" or "window"
+      detect_on: 'canvas', // 'canvas' or 'window'
       mode: 'grab',
       line_linked: {
         opacity: 0.5
@@ -41,7 +41,7 @@ function setParticles(id) {
       events: {
         onclick: {
           enable: true,
-          mode: 'push', // "push" or "remove" (particles)
+          mode: 'push', // 'push' or 'remove' (particles)
           nb: 4
         }
       }
@@ -94,5 +94,25 @@ ga('send', 'pageview');
 $(document).ready(function() {
 
   var headerParticles = setParticles('header-particles');
+
+  var pattern = Trianglify({
+    cell_size: 75,
+    variance: 1,
+    x_colors: ['#000000', '#777777'],
+    y_colors: 'match_x',
+    palette: Trianglify.colorbrewer,
+    color_space: 'lab',
+    color_function: false,
+    stroke_width: 1.51,
+    width: 1920,
+    height: 560,
+    seed: null
+  }).png();
+
+  var dataUrl = 'url('+pattern+')';
+
+  $('footer').css('background-image', dataUrl);
+
+
 
 });
