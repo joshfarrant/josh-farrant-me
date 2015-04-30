@@ -284,7 +284,7 @@ Media Queries
     width: 100% !important;
     margin-bottom: 40px;
     margin-top: 0px; }
-  #projects .project.project-hue .project-info {
+  #projects .project#project-hue .project-info {
     position: relative;
     top: -100px; }
 
