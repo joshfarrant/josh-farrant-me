@@ -161,46 +161,25 @@ footer {
     padding: 0 20px; }
   footer h2 {
     height: 75px; }
-  footer .footer-split {
-    float: left;
-    width: 50%; }
-    footer .footer-split * {
-      font-size: 18px;
-      line-height: 2;
-      text-decoration: none; }
 
-#footer-left *:not(i) {
-  color: white;
-  font-family: "Merriweather", Georgia, serif; }
-#footer-left a:hover, #footer-left a:focus {
-  color: #65cefe;
-  -webkit-transition: color 0.15s ease-out;
-  -moz-transition: color 0.15s ease-out;
-  transition: color 0.15s ease-out; }
-#footer-left #contact i {
-  margin-right: 10px;
-  color: #19B5FE; }
-
-#footer-right input,
-#footer-right textarea {
-  display: block;
-  width: calc(100% - 20px);
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 3px;
-  padding: 0 10px; }
-#footer-right textarea {
-  resize: none;
-  margin-bottom: 25px; }
-#footer-right fieldset {
-  border: none; }
-#footer-right label {
-  text-transform: uppercase;
-  display: block;
-  color: white; }
-#footer-right #footer-submit {
-  font-weight: 400;
-  margin-top: 30px; }
+#footer-center {
+  width: 220px;
+  margin: 0px auto; }
+  #footer-center * {
+    font-size: 18px;
+    line-height: 2;
+    text-decoration: none; }
+  #footer-center *:not(i) {
+    color: white;
+    font-family: "Merriweather", Georgia, serif; }
+  #footer-center a:hover, #footer-center a:focus {
+    color: #65cefe;
+    -webkit-transition: color 0.15s ease-out;
+    -moz-transition: color 0.15s ease-out;
+    transition: color 0.15s ease-out; }
+  #footer-center #contact i {
+    margin-right: 10px;
+    color: #19B5FE; }
 
 /*************
 Useful Classes

@@ -198,18 +198,25 @@ footer {
   h2 {
     height: 75px;
   }
-  .footer-split {
-    float: left;
-    width: 50%;
-    * {
-      font-size: 18px;
-      line-height: 2;
-      text-decoration: none;
-    }
-  }
+  // .footer-split {
+  //   float: left;
+  //   width: 50%;
+  //   * {
+  //     font-size: 18px;
+  //     line-height: 2;
+  //     text-decoration: none;
+  //   }
+  // }
 }
 
-#footer-left {
+#footer-center {
+  width: 220px;
+  margin: 0px auto;
+  * {
+    font-size: 18px;
+    line-height: 2;
+    text-decoration: none;
+  }
   *:not(i) {
     color: white;
     font-family: $font-serif;
@@ -229,33 +236,57 @@ footer {
   }
 }
 
-#footer-right {
-  input,
-  textarea {
-    display: block;
-    width: calc(100% - 20px);
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 3px;
-    padding: 0 10px;
-  }
-  textarea {
-    resize: none;
-    margin-bottom: 25px;
-  }
-  fieldset {
-    border: none;
-  }
-  label {
-    text-transform: uppercase;
-    display: block;
-    color: white;
-  }
-  #footer-submit {
-    font-weight: 400;
-    margin-top: 30px;
-  }
-}
+
+// Currently unused
+//
+// #footer-left {
+//   *:not(i) {
+//     color: white;
+//     font-family: $font-serif;
+//   }
+//   a {
+//     &:hover,
+//     &:focus {
+//       color: lighten($col-main, 15%);
+//       @include transition(color, 0.15s, ease-out);
+//     }
+//   }
+//   #contact {
+//     i {
+//       margin-right: 10px;
+//       color: $col-main;
+//     }
+//   }
+// }
+//
+//
+// #footer-right {
+//   input,
+//   textarea {
+//     display: block;
+//     width: calc(100% - 20px);
+//     margin-bottom: 10px;
+//     border: none;
+//     border-radius: 3px;
+//     padding: 0 10px;
+//   }
+//   textarea {
+//     resize: none;
+//     margin-bottom: 25px;
+//   }
+//   fieldset {
+//     border: none;
+//   }
+//   label {
+//     text-transform: uppercase;
+//     display: block;
+//     color: white;
+//   }
+//   #footer-submit {
+//     font-weight: 400;
+//     margin-top: 30px;
+//   }
+// }
 
 /*************
 Useful Classes
