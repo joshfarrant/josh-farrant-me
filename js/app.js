@@ -98,8 +98,8 @@ $(document).ready(function() {
   var pattern = Trianglify({
     cell_size: 75,
     variance: 1,
-    x_colors: ['#000000', '#777777'],
-    y_colors: 'match_x',
+    x_colors: ['#000000', '#333333'],
+    y_colors: ['#000000', '#018fd0'],
     palette: Trianglify.colorbrewer,
     color_space: 'lab',
     color_function: false,
