@@ -319,14 +319,15 @@ span.button {
 
 a.highlight {
   text-decoration: none;
-  color: $col-main;
+  color: $col-gray;
   font-family: $font-serif;
-  font-weight: 700;
-  border-bottom: 2px solid rgba($col-main, 0);
+  // font-weight: 700;
+  border-bottom: 3px solid $col-secondary;
+  box-shadow: inset 0 -2px 0 $col-secondary;
   &:hover,
   &:focus {
-    border-color: rgba($col-main, 1);
-    @include transition(border-color, 0.2s, ease-out);
+    background-color: $col-secondary;
+    @include transition(background, 0.15s, cubic-bezier(.33,.66,.66,1));
   }
 }
 

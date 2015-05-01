@@ -209,15 +209,15 @@ span.button {
 
 a.highlight {
   text-decoration: none;
-  color: #19B5FE;
+  color: #444444;
   font-family: "Merriweather", Georgia, serif;
-  font-weight: 700;
-  border-bottom: 2px solid rgba(25, 181, 254, 0); }
+  border-bottom: 3px solid #98deff;
+  box-shadow: inset 0 -2px 0 #98deff; }
   a.highlight:hover, a.highlight:focus {
-    border-color: #19b5fe;
-    -webkit-transition: border-color 0.2s ease-out;
-    -moz-transition: border-color 0.2s ease-out;
-    transition: border-color 0.2s ease-out; }
+    background-color: #98deff;
+    -webkit-transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+    -moz-transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
+    transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1); }
 
 h2 {
   text-transform: uppercase;
