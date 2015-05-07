@@ -317,7 +317,8 @@ span.button {
   clear: both
 }
 
-a.highlight {
+#about a,
+#projects a {
   text-decoration: none;
   color: $col-gray;
   font-family: $font-serif;
