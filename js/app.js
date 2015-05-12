@@ -132,6 +132,7 @@ $(document).keydown(function(e) {
     $(document).unbind('keydown',arguments.callee);
 
     console.log('IT\'S KONAMI TIME!');
+    ga('send', 'konami');
     getSomeAsteroids();
 
   }
