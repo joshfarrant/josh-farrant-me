@@ -694,6 +694,7 @@ function Asteroids() {
 			border = '1px solid #e1e1e1';
 			boxShadow = '-2px -2px 15px #333';
 			borderRadius = "3px";
+      display = 'none';
 		}
 		this.gameContainer.appendChild(this.navigation);
 
@@ -753,10 +754,8 @@ function Asteroids() {
 		this.fbLike.innerHTML = '<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FKick-Ass-Destroy-the-web%2F168200253236727&amp;width=292&amp;colorscheme=light&amp;show_faces=false&amp;stream=false&amp;header=false&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:70px;" allowTransparency="true"></iframe>';
 		this.navigation.appendChild(this.fbLike);
 
-		// Don't show appstore on frontpage, because they are already present
-		if ( document.location.href === 'http://erkie.github.com/' ) {
-			this.appstore.style.display = "none";
-		}
+
+		this.appstore.style.display = "none";
 
 		this.highscoreLink.onclick = function() {
 			if ( ! that.highscores ) {
