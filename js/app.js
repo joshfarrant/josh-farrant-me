@@ -52,6 +52,8 @@ function setParticles(id) {
 
 }
 
+
+// Smooth Scrolling
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -67,19 +69,45 @@ $(function() {
   });
 });
 
-$('#footer-submit').click(function() {
 
-  var contact = {
-    name: $('input#name').val(),
-    email: $('input#email').val(),
-    message: $('textarea#message').val()
-  };
+function getSomeAsteroids() {
 
-  var jsonContact = JSON.stringify(contact);
+  if ( ! window.ASTEROIDSPLAYERS )
+  	window.ASTEROIDSPLAYERS = [];
 
-  console.log(jsonContact);
+  if ( window.ActiveXObject && ! document.createElement('canvas').getContext ) {
+  	try {
+  		var xamlScript = document.createElement('script');
+  		xamlScript.setAttribute('type', 'text/xaml');
+  		xamlScript.textContent = '<?xml version="1.0"?><Canvas xmlns="http://schemas.microsoft.com/client/2007"></Canvas>';
+  		document.getElementsByTagName('head')[0].appendChild(xamlScript);
+  	} catch ( e ) {}
 
-});
+  	var script = document.createElement("script");
+  	script.setAttribute('type', 'text/javascript');
+  	script.onreadystatechange = function() {
+  		if ( script.readyState == 'loaded' || script.readyState == 'complete' ) {
+  			if ( typeof G_vmlCanvasManager != "undefined" )
+  				window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
+  		}
+  	};
+  	script.src = "http://erkie.github.com/excanvas.js";
+  	document.getElementsByTagName('head')[0].appendChild(script);
+  }
+  else window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
+
+  var trackingFrame = document.createElement('iframe');
+  trackingFrame.src = 'http://erkie.github.com/tracking.html';
+  trackingFrame.frameborder = '0';
+  trackingFrame.style.position = 'absolute';
+  trackingFrame.style.top = "-1000px";
+  trackingFrame.style.height = "0px";
+  trackingFrame.style.width = "0px";
+
+  document.getElementsByTagName('body')[0].appendChild(trackingFrame);
+
+}
+
 
 // Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -103,8 +131,8 @@ $(document).keydown(function(e) {
 
     $(document).unbind('keydown',arguments.callee);
 
-    // do something awesome
-    alert('KONAMI!');
+    console.log('IT\'S KONAMI TIME!');
+    getSomeAsteroids();
 
   }
 
