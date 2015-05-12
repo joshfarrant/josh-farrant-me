@@ -91,6 +91,25 @@ ga('create', 'UA-59013775-1', 'auto');
 ga('send', 'pageview');
 
 
+// Konami Code
+
+var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+
+$(document).keydown(function(e) {
+
+  kkeys.push( e.keyCode );
+
+  if ( kkeys.toString().indexOf( konami ) >= 0 ) {
+
+    $(document).unbind('keydown',arguments.callee);
+
+    // do something awesome
+    alert('KONAMI!');
+
+  }
+
+});
+
 $(document).ready(function() {
 
   var headerParticles = setParticles('header-particles');
