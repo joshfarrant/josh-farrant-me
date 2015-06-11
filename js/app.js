@@ -14,7 +14,7 @@ function setParticles(id) {
       line_linked: {
         enable_auto: true,
         distance: 100,
-        color: '#73148b',
+        color: '#19B5FE',
         opacity: 0.7,
         width: 1,
         condensed_mode: {
@@ -147,7 +147,7 @@ $(document).ready(function() {
     cell_size: 75,
     variance: 1,
     x_colors: ['#000000', '#333333'],
-    y_colors: ['#000000', '#AB5FBE'],
+    y_colors: ['#000000', '#018fd0'],
     palette: Trianglify.colorbrewer,
     color_space: 'lab',
     color_function: false,
