@@ -161,6 +161,8 @@ $(document).ready(function() {
 
   $('footer').css('background-image', dataUrl);
 
-
+  $('#cat-chat-icon').click(function() {
+    $('iframe#cat-chat').show();
+  });
 
 });

@@ -89,6 +89,10 @@ Main Structure
       line-height: 1;
     }
   }
+  i#cat-chat-icon {
+    position: relative;
+    top: -1px;
+  }
 }
 
 #hero {
@@ -469,4 +473,8 @@ Media Queries
     }
   }
 
+}
+
+iframe#cat-chat {
+  display: none;
 }
