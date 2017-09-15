@@ -3,8 +3,8 @@ import setUpStore from './store';
 
 const middleware = [
   createLogger({
-    duration: true
-  })
+    duration: true,
+  }),
 ];
 
 export default setUpStore(middleware);

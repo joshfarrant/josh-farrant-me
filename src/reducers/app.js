@@ -6,19 +6,16 @@ const {
 } = appActions;
 
 export const defaultState = {
-  demo: false
+  demo: false,
 };
 
 /**
  * Toggles demo boolean
  */
-const demoAction = (state) => {
-  console.debug('state: ', state);
-  return {
-    ...state,
-    demo: !state.demo,
-  };
-};
+const demoAction = state => ({
+  ...state,
+  demo: !state.demo,
+});
 
 const reducer = (
   state,

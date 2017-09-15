@@ -5,28 +5,22 @@ import rootReducer from '../reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const setUpStore = (additionalMiddleware) => {
+const setUpStore = additionalMiddleware => (initialState) => {
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose(
+      applyMiddleware(
+        sagaMiddleware,
+        ...additionalMiddleware,
+      ),
+      window.devToolsExtension ? window.devToolsExtension() : f => f,
+    ),
+  );
 
-  return (initialState) => {
+  store.runSaga = sagaMiddleware.run;
 
-    const store = createStore(
-      rootReducer,
-      initialState,
-      compose(
-        applyMiddleware(
-          sagaMiddleware,
-          ...additionalMiddleware
-        ),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
-      )
-    );
-
-    store.runSaga = sagaMiddleware.run;
-
-    return store;
-
-  };
-
+  return store;
 };
 
 export default setUpStore;

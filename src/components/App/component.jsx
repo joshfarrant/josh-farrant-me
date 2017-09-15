@@ -1,25 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import CSSModules from 'react-css-modules';
+import styles from './style.scss'
 
-const App = ({
-  demo,
-  toggleDemo,
-}) => (
-  <div>
-    <span>Demo is {demo ? 'true' : 'false'}.</span>
-    <button
-      onClick={() => {
-        toggleDemo();
-      }}
-    >
-      Toggle
-    </button>
+const App = () => (
+  <div styleName="container">
+    <h1 styleName="heading">Josh Farrant</h1>
+    <h2 styleName="subheading">Full-Stack Javascript Developer</h2>
   </div>
 );
 
-App.propTypes = {
-  demo: PropTypes.bool.isRequired,
-  toggleDemo: PropTypes.func.isRequired,
-};
-
-export default App;
+export default CSSModules(App, styles);
