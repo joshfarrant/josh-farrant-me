@@ -1,4 +1,7 @@
-.sass-cache/
-bower_components/
-.DS_Store
-css/style.css.map
+node_modules
+bundle.js
+bundle.min.js
+bundle.map.js
+docs
+npm-debug.log
+.vscode/
