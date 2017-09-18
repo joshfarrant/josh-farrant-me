@@ -2,13 +2,15 @@
  * Calculates coordinates of an equilateral triangle's 3 vertices
  * given the coordinates of the origin and the edge length.
  * Takes an optional 4th param to rotate the triangle
- * θ degrees about it's center
+ * θ degrees about the origin, and an optional 5th param
+ * to instead rotate about the center (half height)
  */
 export const getEquilateralTriangleCoordinates = (
   originX = 0,
   originY = 0,
   edgeLength = 10,
   rotateDegrees = 0,
+  rotateAboutCenter = false,
 ) => {
   // A triangle's height is √3/2 * edgeLength
   const triangleHeight = (Math.sqrt(3) / 2) * edgeLength;
@@ -68,15 +70,18 @@ export const getEquilateralTriangleCoordinates = (
     p3,
   ];
 
+  // Distance between triangle's center and origin
+  const centerOriginOffset = (edgeNormal - radius) / 2;
+
   /**
-   * Translate the center of the triangle back to the origin, (0,0)
+   * Translate the origin (or center) of the triangle back to the origin, (0,0)
    * Rotate the points θ radians about the origin
    * Translate the center of the triangle back to it's original location
    */
   const rotatedCoords = coords
     .map(([x, y]) => ([
       x - originX,
-      y - originY,
+      y - originY - (rotateAboutCenter ? centerOriginOffset : 0),
     ]))
     .map(([x, y]) => ([
       (x * cosRads) - (y * sinRads),
@@ -84,7 +89,7 @@ export const getEquilateralTriangleCoordinates = (
     ]))
     .map(([x, y]) => ([
       x + originX,
-      y + originY,
+      y + originY + (rotateAboutCenter ? centerOriginOffset : 0),
     ]));
 
   return rotatedCoords;

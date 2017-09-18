@@ -14,10 +14,23 @@ class Stage extends Component {
     const { stage } = this;
     const snap = Snap(stage);
 
-    const triangleCoords = getEquilateralTriangleCoordinates(100, 100, 100, 50);
+    snap
+      .polygon(
+        getEquilateralTriangleCoordinates(100, 100, 100, 0),
+      )
+      .addClass(styles.triangle);
 
-    const triangle = snap.polygon(triangleCoords);
-    triangle.addClass(styles.triangle);
+    snap
+      .polygon(
+        getEquilateralTriangleCoordinates(160, 100, 100, 180, true),
+      )
+      .addClass(styles.triangle);
+
+    snap
+      .polygon(
+        getEquilateralTriangleCoordinates(220, 100, 100, 0),
+      )
+      .addClass(styles.triangle);
   }
 
   render() {
