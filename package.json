@@ -16,12 +16,15 @@
   "dependencies": {
     "deep-freeze": "0.0.1",
     "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
+    "react-css-modules": "^4.7.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^0.15.6"
+    "redux-saga": "^0.15.6",
+    "snapsvg": "^0.5.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
@@ -44,12 +47,13 @@
     "eslint-plugin-react": "^7.3.0",
     "faucet": "0.0.1",
     "file-loader": "^0.11.2",
+    "imports-loader": "^0.7.1",
     "json-loader": "^0.5.7",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
-    "react-css-modules": "^4.7.1",
     "resolve-url": "^0.2.1",
     "resolve-url-loader": "^2.1.0",
+    "sass-lint": "^1.11.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "tape": "^4.8.0",

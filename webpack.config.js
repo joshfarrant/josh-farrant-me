@@ -12,20 +12,20 @@ const PROD = process.env.NODE_ENV === 'production';
 const output = PROD ? {
   path: `${__dirname}/dist`,
   filename: 'bundle.[hash].js',
-  sourceMapFilename: 'bundle.[hash].map.js'
+  sourceMapFilename: 'bundle.[hash].map.js',
 } : {
   path: __dirname,
   filename: 'bundle.js',
-  sourceMapFilename: 'bundle.map.js'
+  sourceMapFilename: 'bundle.map.js',
 };
 
 const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
     },
-    buildId: JSON.stringify(commitId || '')
-  })
+    buildId: JSON.stringify(commitId || ''),
+  }),
 ];
 
 if (!PROD) {
@@ -34,14 +34,14 @@ if (!PROD) {
   );
 } else {
   plugins.push(
-    new webpack.IgnorePlugin(/^(babel-polyfill)$/)
+    new webpack.IgnorePlugin(/^(babel-polyfill)$/),
   );
 }
 
 module.exports = {
   entry: PROD ? './src/index.js' : [
     'babel-polyfill',
-    './src/index.js'
+    './src/index.js',
   ],
   output,
   plugins,
@@ -84,6 +84,9 @@ module.exports = {
             ],
           },
         },
+      }, {
+        test: require.resolve('snapsvg'),
+        loader: 'imports-loader?this=>window,fix=>module.exports=0',
       },
     ],
   },

@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.stage {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+}
+
+.triangle {
+  fill: $primary;
+}
