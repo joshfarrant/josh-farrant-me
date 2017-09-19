@@ -73,6 +73,9 @@ export const getEquilateralTriangleCoordinates = (
   // Distance between triangle's center and origin
   const centerOriginOffset = (edgeNormal - radius) / 2;
 
+  // Figure out the true origin, if we're rotating
+  const trueOriginY = originY + (rotateAboutCenter && rotateDegrees ? centerOriginOffset : 0);
+
   /**
    * Translate the origin (or center) of the triangle back to the origin, (0,0)
    * Rotate the points θ radians about the origin
@@ -81,7 +84,7 @@ export const getEquilateralTriangleCoordinates = (
   const rotatedCoords = coords
     .map(([x, y]) => ([
       x - originX,
-      y - originY - (rotateAboutCenter ? centerOriginOffset : 0),
+      y - trueOriginY,
     ]))
     .map(([x, y]) => ([
       (x * cosRads) - (y * sinRads),
@@ -89,8 +92,60 @@ export const getEquilateralTriangleCoordinates = (
     ]))
     .map(([x, y]) => ([
       x + originX,
-      y + originY + (rotateAboutCenter ? centerOriginOffset : 0),
+      y + trueOriginY,
     ]));
 
-  return rotatedCoords;
+  return {
+    vertices: rotatedCoords,
+    origin: [originX, trueOriginY],
+    rotation: rotateDegrees,
+  };
+};
+
+export const getTriangleSetCoordinate = (
+  containerWidth,
+  containerHeight,
+  triangles,
+  tSize,
+  tY,
+  tYOffset = 0,
+  tMargin = 10,
+) => {
+  // Number of triangles to draw
+  const tCount = triangles.length;
+
+  // Distance between centers or adjacent triangles
+  const separation = (tSize / 2) + tMargin;
+
+  // Distance between the first triangle's center and the last's
+  const totalWidth = (tCount - 1) * separation;
+
+  if (totalWidth > containerWidth) {
+    throw new Error(`
+      Container too small for requested triangles. Either increase
+      the container size, decrease the triangle size, or decrease
+      the number of triangles.
+    `);
+  }
+
+  // Get starting point, x, of first triangle
+  const firstTriangleX = (containerWidth - totalWidth) / 2;
+
+  // Generate coords
+  const coords = triangles.map((x, i) => ([
+    firstTriangleX + (i * separation),
+    tY,
+  ]));
+
+  return coords.map(([x, y], i) => {
+    const inverted = i % 2 !== 0;
+    const offsetY = inverted ? y - tYOffset : y;
+    return getEquilateralTriangleCoordinates(
+      x,
+      offsetY,
+      tSize,
+      inverted ? 180 : 0, // Rotate every other triangle
+      true,
+    );
+  });
 };

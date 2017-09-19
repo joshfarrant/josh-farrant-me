@@ -14,7 +14,8 @@
     "import/no-mutable-exports": 0,
     "import/prefer-default-export": 0,
     "jsx-a11y/no-static-element-interactions": 0,
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "react/no-did-mount-set-state": 0
   },
   "globals": {
     "buildId": true
