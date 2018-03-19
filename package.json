@@ -1,5 +1,5 @@
 {
-  "name": "josh-farrant-me",
+  "name": "JoshFarrant",
   "description": "Personal website of Josh Farrant",
   "version": "1.0.0",
   "author": "Josh Farrant <josh@farrant.me>",
@@ -23,7 +23,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.js*\"",
     "lint": "eslint --ext .js --ext .jsx src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "./scripts/deploy.sh"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -35,7 +36,6 @@
     "eslint-plugin-react": "^7.6.1",
     "gatsby-plugin-fastclick": "^1.0.1",
     "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-manifest": "^1.0.13",
     "gatsby-plugin-offline": "^1.0.13",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-sharp": "^1.6.27",

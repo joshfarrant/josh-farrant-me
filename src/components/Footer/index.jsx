@@ -48,7 +48,7 @@ const StyledListItem = styled.li`
   position: relative;
 
   ${MEDIA.SMALL(`
-    font-size: 14px;
+    font-size: 16px;
     line-height: 40px;
   `)}
 `;
@@ -66,7 +66,7 @@ const StyledAnchor = styled.a`
   }
 
   ${MEDIA.SMALL(`
-    font-size: 14px;
+    font-size: 16px;
   `)}
 `;
 
@@ -82,7 +82,7 @@ const Copyable = styled(CopyToClipboard)`
   }
 
   ${MEDIA.SMALL(`
-    font-size: 14px;
+    font-size: 16px;
   `)}
 `;
 

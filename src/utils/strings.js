@@ -18,7 +18,7 @@ export const META_TAGS = [
     name: 'keywords',
     content: 'Freelance, JavaScript, React, Node.js, Developer',
   }, {
-    name: 'theme_color',
+    name: 'theme-color',
     content: COLORS.PRIMARY,
   }, {
     name: 'twitter:card',

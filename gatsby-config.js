@@ -1,7 +1,5 @@
-const PRODUCTION = process.env.NODE_ENV === 'production';
-
 module.exports = {
-  pathPrefix: PRODUCTION ? '/blog' : '/',
+  pathPrefix: '/',
   siteMetadata: {
     title: 'Josh Farrant',
   },

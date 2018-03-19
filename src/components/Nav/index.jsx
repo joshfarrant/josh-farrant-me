@@ -29,8 +29,6 @@ const hoverAnimation = keyframes`
 //   },
 // ];
 
-const links = [];
-
 const HEIGHT = '60px';
 
 const Container = styled.nav`
@@ -44,6 +42,7 @@ const Container = styled.nav`
 
   ${MEDIA.XSMALL(`
     flex-direction: column;
+    justify-content: center;
   `)}
 `;
 
@@ -67,18 +66,18 @@ const Left = styled(Link)`
   `)}
 `;
 
-const Right = styled.div`
-  height: ${HEIGHT};
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+// const Right = styled.div`
+//   height: ${HEIGHT};
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
 
-  ${MEDIA.XSMALL(`
-    width: 100%;
-    height: 40px;
-    justify-content: space-around;
-  `)}
-`;
+//   ${MEDIA.XSMALL(`
+//     width: 100%;
+//     height: 40px;
+//     justify-content: space-around;
+//   `)}
+// `;
 
 const LogoContainer = styled.div`
   height: 40px;
@@ -95,37 +94,37 @@ const Name = styled.span`
   transition: font-size 0.3s ease;
 
   ${MEDIA.SMALL(`
-    font-size: 14px;
+    font-size: 16px;
   `)}
 
   ${MEDIA.XSMALL(`
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 5px;
   `)}
 `;
 
-const NavLink = styled(Link)`
-  color: ${COLORS.WHITE};
-  text-transform: uppercase;
-  margin-right: 40px;
-  transition: color 0.3s ease,
-              margin 0.3s ease,
-              font-size 0.3s ease;
-  letter-spacing: 3px;
+// const NavLink = styled(Link)`
+//   color: ${COLORS.WHITE};
+//   text-transform: uppercase;
+//   margin-right: 40px;
+//   transition: color 0.3s ease,
+//               margin 0.3s ease,
+//               font-size 0.3s ease;
+//   letter-spacing: 3px;
 
-  &:hover {
-    color: ${props => props.color};
-  }
+//   &:hover {
+//     color: ${props => props.color};
+//   }
 
-  ${MEDIA.SMALL(`
-    font-size: 14px;
-    margin: 0 10px;
-  `)}
+//   ${MEDIA.SMALL(`
+//     font-size: 16px;
+//     margin: 0 10px;
+//   `)}
 
-  ${MEDIA.XSMALL(`
-    margin: 0;
-  `)}
-`;
+//   ${MEDIA.XSMALL(`
+//     margin: 0;
+//   `)}
+// `;
 
 export default () => (
   <Container>
@@ -137,21 +136,25 @@ export default () => (
       </LogoContainer>
       <Name>Josh Farrant</Name>
     </Left>
-    <Right>
-      {
-        links.map(({ color, label, to }) => (
-          <NavLink
-            key={label}
-            to={to}
-            color={color}
-            activeStyle={{
-              color,
-            }}
-          >
-            {label}
-          </NavLink>
-        ))
-      }
-    </Right>
+    {
+      /*
+        <Right>
+          {
+            links.map(({ color, label, to }) => (
+              <NavLink
+                key={label}
+                to={to}
+                color={color}
+                activeStyle={{
+                  color,
+                }}
+              >
+                {label}
+              </NavLink>
+            ))
+          }
+        </Right>
+      */
+   }
   </Container>
 );

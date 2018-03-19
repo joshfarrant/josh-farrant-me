@@ -55,7 +55,7 @@ const Paragraph = styled.p`
   `)}
 
   ${MEDIA.XSMALL(`
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
   `)}
 `;
