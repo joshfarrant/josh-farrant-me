@@ -42,7 +42,7 @@ export const query = graphql`
       }
     }
     profileImage: imageSharp(id: { regex: "/headshot/" }) {
-      resolutions(width: 128) {
+      resolutions(width: 256) {
         ...GatsbyImageSharpResolutions_withWebp
       }
     }
