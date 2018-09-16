@@ -79,10 +79,9 @@ const getFilesListMd = async (file) => {
         .relative(FILES.CONTENT.SRC, filePath)
         .replace(/\.[^/.]+$/, '');
 
-      console.log('href: ', href);
       return {
         author: fileMeta.author,
-        href,
+        href: `/${href}`,
         published: new Date(fileMeta.date_published),
         title: fileMeta.title,
       };
