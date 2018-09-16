@@ -8,7 +8,9 @@ const Handlebars = require('handlebars');
 const handlebarsDateFormat = require('handlebars-dateformat');
 const markdownIt = require('markdown-it')();
 const meta = require('markdown-it-meta');
+const moment = require('moment');
 const prism = require('markdown-it-prism');
+const { readMarkdown } = require('node-md-meta-cataloger');
 const yaml = require('yamljs');
 
 const md = markdownIt
@@ -59,6 +61,46 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
 
   // pass token to default renderer.
   return defaultRender(tokens, idx, options, env, self);
+};
+
+const getFilesListMd = async (file) => {
+  const fileDirName = path.dirname(file);
+  const filesInDir = await getFiles(fileDirName);
+
+  // Filter out non markdown files, as well as list file
+  const filesToList = Promise.all(
+    filesInDir
+      .filter(filePath => (
+        path.extname(filePath).toLowerCase() === '.md'
+        && !path.basename(filePath).includes('-list')
+      ))
+      .map(async (filePath) => {
+        // Get the metadata from each md file
+        const { meta: fileMeta } = await readMarkdown(filePath);
+        const fileOutputPath = path
+          .basename(filePath)
+          .replace(/\.[^/.]+$/, '');
+        return {
+          author: fileMeta.author,
+          href: fileOutputPath,
+          published: moment(fileMeta.date_published).format('Do MMMM YYYY'),
+          title: fileMeta.title,
+        };
+      }),
+  );
+
+  const filesToListMd = filesToList
+    .map(({
+      author,
+      href,
+      published,
+      title,
+    }) => (
+      `- [${title}](${href})\n\n    ${author} | ${published}`
+    ))
+    .join('\n');
+
+  return filesToListMd;
 };
 
 const render = async () => {
@@ -130,7 +172,12 @@ const render = async () => {
 
       if (fileExtension === '.md') {
         // Markdown files
-        const fileContents = await readFile(file, 'utf8');
+        let fileContents = await readFile(file, 'utf8');
+
+        if (fileName === '-list') {
+          fileContents += getFilesListMd(file);
+        }
+
         const baseBody = md.render(fileContents);
         body = emojione.unicodeToImage(baseBody);
       } else if (fileExtension === '.yaml') {
@@ -164,6 +211,8 @@ const render = async () => {
         if (fileName[0] === '_') {
           // Remember to remove leading underscore
           modifiedOutputPath = `${dirName}/${fileName.substr(1)}.html`;
+        } else if (fileName === '-list') {
+          modifiedOutputPath = `${dirName}/index.html`;
         } else {
           modifiedOutputPath = `${dirName}/${fileName}/index.html`;
         }
