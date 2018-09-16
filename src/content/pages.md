@@ -1,6 +1,7 @@
 ## Pages 📃
 
 - [Books](/books)
+- [Code](/code)
 - [Code Snippets](/snippets)
 - [Games](/games)
 - [Podcasts](/podcasts)
