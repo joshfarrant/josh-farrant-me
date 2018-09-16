@@ -78,6 +78,8 @@ Games are listed under the system that I played them on, which isn't necessarily
 ### PC
 - **Stardew Valley**
 - **Into The Breach**
+- **FTL**
+- **Kerbal Space Program**
 - **Factorio**
 - **Runescape**
 - **Minecraft**
