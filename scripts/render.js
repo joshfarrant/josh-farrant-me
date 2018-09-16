@@ -14,6 +14,7 @@ const md = markdownIt
   .use(prism);
 
 const {
+  copyFilesInDir,
   ensureDirExists,
   getFiles,
   readFile,
@@ -113,11 +114,18 @@ const render = async () => {
   try {
     files.forEach(async (file) => {
       let body;
-      const fileContents = await readFile(file, 'utf8');
-      const fileExtension = path.extname(file);
+      const fileExtension = path.extname(file).toLowerCase();
+
+      const relPath = path.relative(FILES.CONTENT.SRC, file);
+      const outputPath = path.join(FILES.CONTENT.OUTPUT, relPath);
+
+      // File name, without extension
+      const fileName = path.basename(outputPath).replace(/\.[^/.]+$/, '');
+      const dirName = path.dirname(outputPath);
 
       if (fileExtension === '.md') {
         // Markdown files
+        const fileContents = await readFile(file, 'utf8');
         const baseBody = md.render(fileContents);
         body = emojione.unicodeToImage(baseBody);
       } else if (fileExtension === '.yaml') {
@@ -126,6 +134,10 @@ const render = async () => {
         body = recipeTemplate({
           ...recipe,
         });
+      } else if (['.png', '.gif', '.jpg', '.jpeg'].includes(fileExtension)) {
+        await ensureDirExists(dirName);
+        await copyFilesInDir(file, outputPath);
+        return;
       } else {
         return;
       }
@@ -137,28 +149,22 @@ const render = async () => {
         JS: jsObj,
       });
 
-      const relPath = path.relative(FILES.CONTENT.SRC, file);
-      const outputPathMd = path.join(FILES.CONTENT.OUTPUT, relPath);
-
-      // File name, without extension
-      const fileName = path.basename(outputPathMd).replace(/\.[^/.]+$/, '');
-      const dirName = path.dirname(outputPathMd);
-      let outputPath;
+      let modifiedOutputPath;
 
       if (fileName !== 'index') {
         // An underscore at the start of the fileName prevents us from creating a directory
         if (fileName[0] === '_') {
           // Remember to remove leading underscore
-          outputPath = `${dirName}/${fileName.substr(1)}.html`;
+          modifiedOutputPath = `${dirName}/${fileName.substr(1)}.html`;
         } else {
-          outputPath = `${dirName}/${fileName}/index.html`;
+          modifiedOutputPath = `${dirName}/${fileName}/index.html`;
         }
       } else {
-        outputPath = `${dirName}/${fileName}.html`;
+        modifiedOutputPath = `${dirName}/${fileName}.html`;
       }
 
-      await ensureDirExists(path.dirname(outputPath));
-      await writeFile(outputPath, html);
+      await ensureDirExists(path.dirname(modifiedOutputPath));
+      await writeFile(modifiedOutputPath, html);
     });
   } catch (err) {
     console.error(`Error rendering markdown : ${err}`);
