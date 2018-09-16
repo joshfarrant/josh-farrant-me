@@ -75,12 +75,14 @@ const getFilesListMd = async (file) => {
     .map(async (filePath) => {
       // Get the metadata from each md file
       const { meta: fileMeta } = await readMarkdown(filePath);
-      const fileOutputPath = path
-        .basename(filePath)
+      const href = path
+        .relative(FILES.CONTENT.SRC, filePath)
         .replace(/\.[^/.]+$/, '');
+
+      console.log('href: ', href);
       return {
         author: fileMeta.author,
-        href: fileOutputPath,
+        href,
         published: new Date(fileMeta.date_published),
         title: fileMeta.title,
       };
