@@ -5,11 +5,14 @@ const compressor = require('node-minify');
 const emojione = require('emojione');
 const footnote = require('markdown-it-footnote');
 const Handlebars = require('handlebars');
+const handlebarsDateFormat = require('handlebars-dateformat');
 const markdownIt = require('markdown-it')();
+const meta = require('markdown-it-meta');
 const prism = require('markdown-it-prism');
 const yaml = require('yamljs');
 
 const md = markdownIt
+  .use(meta)
   .use(footnote)
   .use(prism);
 
@@ -27,6 +30,8 @@ const generateHeaders = require('./generateHeaders');
 const { copyFavicons } = require('./favicons');
 
 Handlebars.registerHelper('json', JSON.stringify);
+
+Handlebars.registerHelper('dateFormat', handlebarsDateFormat);
 
 Handlebars.registerHelper('or', (v1, v2, options) => (
   (v1 || v2) ? options.fn(this) : options.inverse(this)
@@ -147,7 +152,10 @@ const render = async () => {
         css,
         favicons,
         JS: jsObj,
+        meta: Object.keys(md.meta).length > 0 ? md.meta : false,
       });
+
+      md.meta = {};
 
       let modifiedOutputPath;
 

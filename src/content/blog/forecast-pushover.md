@@ -1,5 +1,11 @@
-
-## Building A Hyperlocal Rain Notification App
+---
+title: Building A Hyperlocal Rain Notification App
+slug: forecast-pushover
+author: Josh Farrant
+date_published: 2014-07-01T19:54:08.000Z
+date_updated:   2014-07-03T10:58:28.000Z
+tags: Project, Node.js
+---
 
 ![Pushover heavy rain notification](/blog/images/forecast-pushover-notification.png)
 

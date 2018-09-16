@@ -24,6 +24,22 @@
         </div>
       </nav>
       <main>
+        {{#if meta}}
+          {{#if meta.title}}
+            <h2>{{meta.title}}</h2>
+          {{/if}}
+          {{#if meta.author}}
+            {{#if meta.date_published}}
+              <p>{{meta.author}} | {{dateFormat meta.date_published "Do MMMM YYYY"}}</p>
+            {{else}}
+              <p>{{meta.author}}</p>
+            {{/if}}
+          {{else}}
+            {{#if meta.date_published}}
+              <p>{{dateFormat meta.date_published "Do MMMM YYYY"}}</p>
+            {{/if}}
+          {{/if}}
+        {{/if}}
         {{{body}}}
       </main>
     </div>
