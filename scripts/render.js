@@ -197,7 +197,10 @@ const render = async () => {
         css,
         favicons,
         JS: jsObj,
-        meta: Object.keys(md.meta).length > 0 ? md.meta : false,
+        meta: Object.keys(md.meta).length > 0 ? {
+          ...md.meta,
+          title: md.meta.title.replace('\\', ''),
+        } : false,
       });
 
       md.meta = {};
