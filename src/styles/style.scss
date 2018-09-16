@@ -357,6 +357,11 @@ code {
   padding: 16px;
   border-radius: 3px;
   font-size: 1rem;
+  overflow-y: hidden;
+}
+
+p code {
+  display: inline;
 }
 
 code::-webkit-scrollbar {
