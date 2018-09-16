@@ -66,37 +66,35 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
 const getFilesListMd = async (file) => {
   const fileDirName = path.dirname(file);
   const filesInDir = await getFiles(fileDirName);
-
   // Filter out non markdown files, as well as list file
-  const filesToList = Promise.all(
-    filesInDir
-      .filter(filePath => (
-        path.extname(filePath).toLowerCase() === '.md'
-        && !path.basename(filePath).includes('-list')
-      ))
-      .map(async (filePath) => {
-        // Get the metadata from each md file
-        const { meta: fileMeta } = await readMarkdown(filePath);
-        const fileOutputPath = path
-          .basename(filePath)
-          .replace(/\.[^/.]+$/, '');
-        return {
-          author: fileMeta.author,
-          href: fileOutputPath,
-          published: moment(fileMeta.date_published).format('Do MMMM YYYY'),
-          title: fileMeta.title,
-        };
-      }),
-  );
+  const filesToListPromises = filesInDir
+    .filter(filePath => (
+      path.extname(filePath).toLowerCase() === '.md'
+      && !path.basename(filePath).includes('-list')
+    ))
+    .map(async (filePath) => {
+      // Get the metadata from each md file
+      const { meta: fileMeta } = await readMarkdown(filePath);
+      const fileOutputPath = path
+        .basename(filePath)
+        .replace(/\.[^/.]+$/, '');
+      return {
+        author: fileMeta.author,
+        href: fileOutputPath,
+        published: new Date(fileMeta.date_published),
+        title: fileMeta.title,
+      };
+    });
 
+  const filesToList = await Promise.all(filesToListPromises);
   const filesToListMd = filesToList
+    .sort((a, b) => b.published - a.published)
     .map(({
-      author,
       href,
       published,
       title,
     }) => (
-      `- [${title}](${href})\n\n    ${author} | ${published}`
+      `- [${title}](${href}) | ${moment(published).format('Do MMMM YYYY')}`
     ))
     .join('\n');
 
@@ -175,7 +173,7 @@ const render = async () => {
         let fileContents = await readFile(file, 'utf8');
 
         if (fileName === '-list') {
-          fileContents += getFilesListMd(file);
+          fileContents += await getFilesListMd(file);
         }
 
         const baseBody = md.render(fileContents);
