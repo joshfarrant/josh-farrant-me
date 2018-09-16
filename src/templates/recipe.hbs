@@ -1,0 +1,78 @@
+<h2>{{recipe_name}}</h2>
+
+{{#if source_url}}
+  <p>
+    Via
+    <a href="{{source_url.url}}" target="_blank">
+      {{source_url.name}}
+    </a>
+  </p>
+{{/if}}
+
+{{#if source_book}}
+  <p>
+    From the book
+    <strong>{{source_book.title}}</strong>
+    {{#if source_book.authors}}
+      by
+      {{#each source_book.authors as |author|}}
+        {{author}}{{#unless @last}},{{else}}.{{/unless}}
+      {{/each}}
+    {{/if}}
+  </p>
+{{/if}}
+
+{{#if ingredients}}
+  <hr />
+  <h3>Ingredients</h3>
+
+  {{#if yields}}
+    <p>
+      <i>Serves {{yields.servings}}</i>
+    </p>
+  {{/if}}
+
+  <ul>
+    {{#each ingredients as |ingredient|}}
+      {{#each ingredient as |values name|}}
+        <li>{{values.amounts.amount}} {{values.amounts.unit}} {{name}}</li>
+      {{/each}}
+    {{/each}}
+  </ul>
+{{/if}}
+
+{{#if steps}}
+  <hr />
+  <h3>Method</h3>
+  <ol>
+    {{#each steps as |stepArr|}}
+      {{#each stepArr as |step|}}
+        <li>{{step}}</li>
+      {{/each}}
+    {{/each}}
+  </ol>
+{{/if}}
+
+{{#if notes}}
+  <hr />
+  <h3>Notes</h3>
+  <p>
+    {{#each notes as |note|}}
+      {{note}}
+    {{/each}}
+  </p>
+{{/if}}
+
+{{#if related_recipes}}
+  <hr />
+  <h3>Related Recipes</h3>
+  <ul>
+    {{#each related_recipes as |related|}}
+      <li>
+        <a href="/recipes/{{related}}">
+          {{related}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

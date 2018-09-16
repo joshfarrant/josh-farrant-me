@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "name": "Josh Farrant",
+  "description": "The personal website of Josh Farrant",
+  "icons": {
+    "60": "/assets/favicons/firefox_app_60x60.png",
+    "128": "/assets/favicons/firefox_app_128x128.png",
+    "512": "/assets/favicons/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Josh Farrant",
+    "url": "https://josh.farrant.me"
+  }
+}

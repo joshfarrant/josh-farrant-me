@@ -1,0 +1,493 @@
+/*
+ * Variables
+ */
+
+html {
+  --primary-colour: #4169e1; // CSS royalblue
+  --copy-colour: rgba(20, 35, 60, 1);
+  --faded-copy-colour: rgba(20, 35, 60, 0.9);
+  --background-colour: #fff;
+  --off-background-colour: #ababab;
+  --code-background-colour: #f6f8fa;
+  --code-copy-colour: #000;
+
+	--code-colour-string: #24292e;
+  --code-colour-bool: #005cc5;
+  --code-colour-function: #24292e;
+	--code-colour-copy: #24292e;
+	--code-colour-operator: #d73a49;
+	--code-colour-attr: #d73a49;
+	--code-colour-property: #22863a;
+	--code-colour-background: #f6f8fa;
+  --code-colour-comment: #969896;
+
+  #dark-theme-toggle,
+  #light-theme-toggle {
+    display: none;
+  }
+
+  &[data-theme="light"] {
+    #dark-theme-toggle {
+      display: initial;
+    }
+  }
+
+  &[data-theme="dark"] {
+    --primary-colour: #ff79c6;
+    --copy-colour: rgba(255, 255, 255, 1);
+    --faded-copy-colour: rgba(255, 255, 255, 0.9);
+    --background-colour: #000;
+    --off-background-colour: #545454;
+
+    --code-colour-string: #F1FA8C;
+    --code-colour-bool: #bd93f9;
+    --code-colour-function: #50FA7B;
+    --code-colour-copy: #f6f8fa;
+    --code-colour-operator: #ff79c6;
+    --code-colour-attr: #ff79c6;
+    --code-colour-property: #50fa7b;
+    --code-colour-background: #333;
+    --code-colour-comment: #969896;
+
+    #light-theme-toggle {
+      display: initial;
+    }
+  }
+}
+
+/*
+ * HTML tag styles
+ */
+
+* {
+  outline-color: var(--primary-colour);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--copy-colour);
+  background: var(--background-colour);
+}
+
+html {
+  overflow-y: auto;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: calc(100vh - 16px);
+  margin: 8px;
+  padding: 3em 4em 0;
+}
+
+a {
+  color: var(--primary-colour);
+  outline: none;
+  text-decoration: none;
+
+  &:visited {
+    color: var(--primary-colour);
+  }
+
+  &:hover,
+  &:focus {
+    $padding: 2px;
+    position: relative;
+    padding: 0 $padding;
+    left: -$padding;
+    margin-right: -2 * $padding;
+    background: var(--primary-colour);
+    color: var(--background-colour);
+  }
+}
+
+sup a {
+  &:hover,
+  &:focus {
+    padding: 0;
+    left: 0;
+    margin-right: 0;
+  }
+}
+
+hr {
+  width: 200px;
+  margin: 1.5em auto 1rem;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--off-background-colour);
+}
+
+nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+main {
+  flex: 1;
+  max-width: 648px;
+  min-width: 320px;
+  margin: 4rem 4rem 2rem 222px;
+}
+
+p {
+  color: var(--faded-copy-colour);
+}
+
+strong {
+  color: var(--copy-colour);
+}
+
+/*
+ * Utility class styles
+ */
+
+.button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*
+ * Custom class styles
+ */
+
+.main-container {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+}
+
+.logo {
+  font-size: 1.31951rem;
+}
+
+nav .links {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  margin-top: 2rem;
+
+  & > a {
+    margin-bottom: 1rem;
+  }
+}
+
+.emojione {
+  margin: 0;
+  padding: 0;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.1em !important;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  font-size: 2rem;
+  font-family: serif;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--primary-colour);
+  }
+}
+
+/*
+ * Media queries
+ */
+
+@media (max-width: 1200px) {
+  main {
+    margin-left: 96px;
+  }
+}
+
+@media (max-width: 1060px) {
+  main {
+    margin-left: 2rem
+  }
+}
+
+@media (max-width: 980px) {
+  .main-container {
+    flex-flow: column nowrap;
+  }
+  nav {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .links {
+      flex-flow: row nowrap;
+      margin-top: 0;
+      a {
+        margin-bottom: 0;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  main {
+    margin: 2rem 0 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: .4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    flex-flow: column nowrap;
+
+    .links {
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top: 1rem;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  main {
+    margin: 2rem 0 0;
+  }
+}
+
+/*
+ * Photos template styles
+ */
+
+.photos-container {
+  /* Prevent vertical gaps */
+  line-height: 0;
+
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;
+}
+
+.photos-container img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1200px) {
+  .photos-container {
+    -moz-column-count:    4;
+    -webkit-column-count: 4;
+    column-count:         4;
+  }
+}
+
+@media (max-width: 1000px) {
+  .photos-container {
+    -moz-column-count:    3;
+    -webkit-column-count: 3;
+    column-count:         3;
+  }
+}
+
+@media (max-width: 800px) {
+  .photos-container {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
+  }
+}
+
+@media (max-width: 400px) {
+  .photos-container {
+    -moz-column-count:    1;
+    -webkit-column-count: 1;
+    column-count:         1;
+  }
+}
+
+/*
+ * Code block styles
+ */
+
+code {
+  display: block;
+  overflow-x: auto;
+  padding: 16px;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+code::-webkit-scrollbar {
+  height: 0.8em;
+}
+
+code::-webkit-scrollbar-track {
+  border-radius: 20px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+}
+
+code::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: var(--off-background-colour);
+  outline: 1px solid var(--background-colour);
+}
+
+/**
+ * Github-like theme for Prism.js
+ * @author Luke Askew http://github.com/lukeaskew
+ */
+
+code,
+code[class*='language-'],
+pre[class*='language-'] {
+	color: var(--code-colour-copy);
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	tab-size: 4;
+	hyphens: none;
+	font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+	line-height: 1.4;
+	direction: ltr;
+	cursor: text;
+}
+
+// code blocks
+pre[class*='language-'] {
+	overflow: auto;
+	margin: 1em 0;
+	padding: .5em 1.2em 1.2em;
+	border-radius: 3px;
+	font-size: 85%;
+}
+
+p code,
+li code,
+table code {
+	margin: 0;
+	border-radius: 3px;
+	padding: .2em 0;
+	font-size: 85%;
+
+	&:before,
+	&:after {
+		letter-spacing: -.2em;
+		content: '\00a0';
+	}
+}
+
+code,
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background: var(--code-colour-background);
+}
+
+// inline code
+:not(pre) > code[class*='language-'] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+
+// token colors
+.token {
+
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: var(--code-colour-comment);
+	}
+
+	&.punctuation {
+    color: var(--code-colour-copy);
+  }
+
+	&.string,
+	&.atrule,
+	&.attr-value {
+		color: var(--code-colour-string);
+	}
+
+	&.property,
+	&.tag {
+		color: var(--code-colour-property);
+	}
+
+	&.boolean,
+	&.number {
+		color: var(--code-colour-bool);
+  }
+
+  &.function {
+		color: var(--code-colour-function);
+  }
+
+	&.selector,
+	&.attr-name,
+	&.attr-value .punctuation:first-child,
+	&.keyword,
+	&.regex,
+	&.important {
+		color: var(--code-colour-attr);
+	}
+
+
+	&.operator,
+	&.entity,
+	&.url,
+	.language-css &.string {
+		color: var(--code-colour-operator);
+	}
+
+	&.entity {
+		cursor: help;
+	}
+
+}
+
+.namespace {
+	opacity: .7;
+}

@@ -1,17 +1,2 @@
-# Josh Farrant's Website
-
-Built using [Gatsby](https://www.gatsbyjs.org/)
-
-## Develop
-
-```
-npm i
-npm run develop
-```
-
-## Build Production Bundle
-
-```
-npm i
-npm run build
-```
+# josh-farrant-me-ideas
+Some ideas for josh.farrant.me that I don't want to make public yet

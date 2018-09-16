@@ -1,0 +1,23 @@
+{
+  "baseFontSize": "14px",
+  "baseLineHeight": 1.7,
+  "headerFontFamily": [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Oxygen-Sans",
+    "Ubuntu",
+    "Cantarell",
+    "Helvetica Neue",
+    "sans-serif"
+  ],
+  "bodyFontFamily": [
+    "SFMono-Regular",
+    "Consolas",
+    "Liberation Mono",
+    "Menlo",
+    "Courier",
+    "monospace"
+  ]
+}

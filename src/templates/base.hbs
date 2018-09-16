@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title>Josh Farrant</title>
+    <meta name="description" content="The personal website of Josh Farrant">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#292929">
+    {{{favicons}}}
+    <style>{{{css}}}</style>
+    <script type="text/javascript">{{{JS.HEAD}}}</script>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav>
+        <div class="title">
+          <a href="/" title="" class="logo">Josh Farrant</a>
+        </div>
+        <div class="links">
+          <a href="/about" title="About">About</a>
+          <a href="/code" title="Code">Code</a>
+          <a href="/recipes" title="Recipes">Recipes</a>
+          <a href="/pages" title="More">More</a>
+        </div>
+      </nav>
+      <main>
+        {{{body}}}
+      </main>
+    </div>
+    <div>
+      <button
+        id="dark-theme-toggle"
+        class="theme-toggle button-reset"
+        title="Enable dark mode"
+      >
+        🕶
+      </button>
+      <button
+        id="light-theme-toggle"
+        class="theme-toggle button-reset"
+        title="Enable light mode"
+      >
+        💡
+      </button>
+    </div>
+    <script type="text/javascript">{{{JS.MAIN}}}</script>
+  </body>
+</html>

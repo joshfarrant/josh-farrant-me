@@ -1,28 +1,11 @@
 {
-  "parser" : "babel-eslint",
   "extends": "airbnb",
-  "plugins": [
-    "react"
-  ],
-  "env": {
-    "es6": true,
-    "node": true
-  },
   "rules": {
-    "import/extensions": 0,
-    "import/order": 2,
-    "import/prefer-default-export": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "jsx-a11y/no-static-element-interactions": 0
-  },
-  "settings": {
-    "import/core-modules": [
-      "react",
-      "prop-types",
-      "typography"
-    ]
+    "no-console": 0
   },
   "globals": {
-    "graphql": true
+    "document": true,
+    "localStorage": true,
+    "window": true
   }
 }

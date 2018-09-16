@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="320px" viewBox="0 0 320 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Dark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Actual-Logo-Final-(Alternate-colours)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(-200.000000, -352.000000)">
+            <g id="Dark" transform="translate(200.000000, 352.000000)">
+                <rect id="Background" fill="#FF79C6" x="0" y="0" width="320" height="320"></rect>
+                <path d="M170,170 L270,170 L270,220 C270,247.614237 247.614237,270 220,270 L170,270 L170,170 Z" id="Bottom-Right" fill="#000000"></path>
+                <path d="M220,50 L270,50 L270,150 L170,150 L170,100 C170,72.3857625 192.385763,50 220,50 Z" id="Top-Right" fill="#000000"></path>
+                <path d="M50,50 L100,50 C127.614237,50 150,72.3857625 150,100 L150,220 C150,247.614237 127.614237,270 100,270 L100,270 C72.3857625,270 50,247.614237 50,220 L50,50 Z" id="Left" fill="#000000"></path>
+            </g>
+        </g>
+    </g>
+</svg>
