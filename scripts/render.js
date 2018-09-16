@@ -57,6 +57,7 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
   if (['http:', 'https:'].includes(linkUrl.protocol)) {
     // Add target="_blank"
     tokens[idx].attrPush(['target', '_blank']);
+    tokens[idx].attrPush(['rel', 'noopener']);
   }
 
   // pass token to default renderer.
