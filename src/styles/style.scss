@@ -21,17 +21,6 @@ html {
 	--code-colour-background: #f6f8fa;
   --code-colour-comment: #969896;
 
-  #dark-theme-toggle,
-  #light-theme-toggle {
-    display: none;
-  }
-
-  &[data-theme="light"] {
-    #dark-theme-toggle {
-      display: initial;
-    }
-  }
-
   &[data-theme="dark"] {
     --primary-colour: #ff79c6;
     --copy-colour: rgba(255, 255, 255, 1);
@@ -48,10 +37,6 @@ html {
     --code-colour-property: #50fa7b;
     --code-colour-background: #333;
     --code-colour-comment: #969896;
-
-    #light-theme-toggle {
-      display: initial;
-    }
   }
 }
 
@@ -201,10 +186,13 @@ nav .links {
   vertical-align: -.1em !important;
 }
 
+$themeHidden: -40px;
+$themeVisible: 1rem;
+
 .theme-toggle {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: $themeVisible;
+  right: $themeVisible;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -215,10 +203,29 @@ nav .links {
   font-size: 2rem;
   font-family: serif;
   cursor: pointer;
+  transition: all .2s ease;
 
   &:hover,
   &:focus {
     color: var(--primary-colour);
+  }
+}
+
+:root[data-theme="dark"] {
+  #light-theme-toggle {
+    bottom: $themeVisible;
+  }
+  #dark-theme-toggle {
+    right: $themeHidden;
+  }
+}
+
+:root[data-theme="light"] {
+  #light-theme-toggle {
+    bottom: $themeHidden;
+  }
+  #dark-theme-toggle {
+    right: $themeVisible;
   }
 }
 
