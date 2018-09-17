@@ -5,7 +5,9 @@
   },
   "globals": {
     "document": true,
+    "fetch": true,
     "localStorage": true,
+    "navigator": true,
     "window": true
   }
 }
