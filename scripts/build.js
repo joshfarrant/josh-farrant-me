@@ -10,6 +10,7 @@ const {
 } = require('./files');
 const render = require('./render');
 const photos = require('./photos');
+const generateServiceWorker = require('./generateServiceWorker');
 const buildSass = require('./sass');
 const copyStaticDir = require('./copyStaticDir');
 const generateTypographyCss = require('./typography');
@@ -22,6 +23,7 @@ module.exports = {
     await ensureDirExists(TEMP_DIR);
     await generateTypographyCss();
     await buildSass();
+    await generateServiceWorker();
     // await photos.copy();
     // await photos.build();
     await render();
@@ -34,6 +36,7 @@ module.exports = {
     await ensureDirExists(TEMP_DIR);
     await generateTypographyCss();
     await buildSass();
+    await generateServiceWorker();
     // await photos.copy();
     // await photos.build();
     await render();
