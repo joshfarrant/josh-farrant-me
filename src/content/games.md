@@ -2,7 +2,7 @@
 
 Games are one of my favourite pastimes. I've played games (video, board, and card) for as long as I can remember, and have owned a console from every generation from the NES onwards. In that time I've played far, far too many games to catalogue completely, so here's a list of games from the last 25+ years that have stood out to me. As time goes on and this site evolves, I'd like to write a few sentences about what makes each game stand out to me.
 
-Games are listed under the system that I played them on, which isn't necessarily the system that they were released on.
+Games are listed under the system that I played them on, which isn't necessarily the system that they were released on. They may also be duplicated across systems, if they stood out on both.
 
 ---
 
@@ -78,6 +78,8 @@ Games are listed under the system that I played them on, which isn't necessarily
 ### PC
 - **Stardew Valley**
 - **Into The Breach**
+- **FTL**
+- **Kerbal Space Program**
 - **Factorio**
 - **Runescape**
 - **Minecraft**
@@ -104,4 +106,3 @@ I try to take a couple of decks of cards with me whenever I go away. Not all of 
 - **Coup**
 - **Crib**
 - **Gin Rummy**
-
