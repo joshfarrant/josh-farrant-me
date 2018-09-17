@@ -21,6 +21,10 @@ const CONSTANTS = {
         return `${CONSTANTS.FILES.FAVICONS.TEMP}/html.txt`;
       },
     },
+    SERVICE_WORKER: {
+      SRC: `${SRC_DIR}/scripts/service-worker.js`,
+      OUTPUT: `${BUILD_DIR}/service-worker.js`,
+    },
     JS: {
       ROOT: `${SRC_DIR}/scripts`,
       SRC: {
