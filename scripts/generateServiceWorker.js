@@ -22,8 +22,6 @@ const generate = async () => {
     ${sw}
   `;
 
-  console.log('modifiedSW: ', modifiedSW);
-
   await writeFile(FILES.SERVICE_WORKER.OUTPUT, modifiedSW);
 };
 
