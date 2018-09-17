@@ -49,6 +49,11 @@ html {
 }
 
 html,
+html * {
+  transition: all .2s ease !important;
+}
+
+html,
 body {
   margin: 0;
   padding: 0;
@@ -204,11 +209,6 @@ $themeVisible: 1rem;
   font-family: serif;
   cursor: pointer;
   transition: all .2s ease;
-
-  &:hover,
-  &:focus {
-    color: var(--primary-colour);
-  }
 }
 
 :root[data-theme="dark"] {
