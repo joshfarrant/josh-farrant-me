@@ -1,7 +1,7 @@
 {
-  "name": "josh-farrant-me-ideas",
-  "version": "0.0.1",
-  "description": "Some ideas for josh.farrant.me that I don't want to make public yet",
+  "name": "josh-farrant-me",
+  "version": "1.0.0",
+  "description": "The website for josh.farrant.me",
   "main": "scripts/develop.js",
   "scripts": {
     "start": "npm run develop",
