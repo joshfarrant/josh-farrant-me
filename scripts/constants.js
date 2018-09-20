@@ -6,6 +6,9 @@ const ASSETS_DIR = `${BUILD_DIR}/assets`;
 const PHOTOS_DIR = `${BUILD_DIR}/photos/albums`;
 
 const CONSTANTS = {
+  ENVIRONMENT: {
+    PROD: process.env.NODE_ENV === 'production',
+  },
   SRC_DIR,
   BUILD_DIR,
   TEMP_DIR,

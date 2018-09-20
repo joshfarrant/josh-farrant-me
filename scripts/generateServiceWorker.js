@@ -1,6 +1,8 @@
 const crypto = require('crypto');
 const util = require('util');
 
+const { ENVIRONMENT } = require('./constants');
+
 const randomBytes = util.promisify(crypto.randomBytes);
 
 const {
@@ -12,6 +14,10 @@ const {
 } = require('./constants');
 
 const generate = async () => {
+  if (!ENVIRONMENT.PROD) {
+    return;
+  }
+
   const sw = await readFile(FILES.SERVICE_WORKER.SRC, 'utf8');
 
   const buffer = await randomBytes(32);
