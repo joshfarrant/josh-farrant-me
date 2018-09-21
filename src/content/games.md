@@ -62,6 +62,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 - **Grand Theft Auto IV**
 - **Grand Theft Auto V**
 - **Worms 2**
+- **Braid**
 
 ### Nintendo 3DS
 - **The Legend of Zelda: Ocarina of Time**
@@ -83,6 +84,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 - **Factorio**
 - **Runescape**
 - **Minecraft**
+- **The Witness**
 
 ### iOS
 - **Pokémon GO**
