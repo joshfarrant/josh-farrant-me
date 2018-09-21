@@ -24,6 +24,7 @@ const config = {
   lang: 'en-GB', // Primary language for name and short_name
   background: '#000', // Background colour for flattened icons. `string`
   theme_color: '#ff79c6', // Theme color user for example in Android's task switcher. `string`
+  appleStatusBarStyle: 'black',
   display: 'standalone', // Preferred display mode: "fullscreen", "standalone", "minimal-ui" or "browser". `string`
   orientation: 'any', // Default orientation: "any", "natural", "portrait" or "landscape". `string`
   start_url: '/', // Start URL when launching the application from a device. `string`
