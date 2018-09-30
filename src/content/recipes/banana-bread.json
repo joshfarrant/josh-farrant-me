@@ -2,6 +2,8 @@
   "yields": {
     "servings": 6
   },
+  "cook_time": 40,
+  "prep_time": 20,
   "steps": [
     {
       "step": "Heat the oven to 190°. Line two loaf tins with baking parchment."
@@ -42,7 +44,8 @@
       "bananas": {
         "amounts": {
           "amount": 4,
-          "unit": ""
+          "unit": "",
+          "processing": "mashed"
         }
       }
     },
@@ -55,10 +58,11 @@
       }
     },
     {
-      "unsalted butter ": {
+      "unsalted butter": {
         "amounts": {
           "amount": 125,
-          "unit": "g"
+          "unit": "g",
+          "processing": "softened"
         }
       }
     },
