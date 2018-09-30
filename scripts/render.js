@@ -204,7 +204,7 @@ const render = async () => {
       let back;
       const location = relPath.substr(0, relPath.lastIndexOf('/'));
 
-      if (location && fileName !== 'index') {
+      if (location && !['index', '-list'].includes(fileName)) {
         const backHref = `/${location}`;
         const backTitle = backHref;
         back = {
