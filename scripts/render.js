@@ -186,6 +186,13 @@ const render = async () => {
         body = recipeTemplate({
           ...recipe,
         });
+      } else if (fileExtension === '.json') {
+        // JSON (recipe) files
+        const jsonFile = await readFile(file, 'utf8');
+        const recipe = JSON.parse(jsonFile);
+        body = recipeTemplate({
+          ...recipe,
+        });
       } else if (['.png', '.gif', '.jpg', '.jpeg'].includes(fileExtension)) {
         await ensureDirExists(dirName);
         await copyFilesInDir(file, outputPath);
