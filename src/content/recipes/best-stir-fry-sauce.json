@@ -1,1 +1,84 @@
-{"source_url":{"name":"Tastes Lovely","url":"https:\/\/www.tasteslovely.com\/best-stir-fry-sauce\/"},"yields":{"servings":4},"steps":[{"step":"Mix all ingredients together."},{"step":"Mix sauce into stir fry and cook for 3 minutes to allow the sauce to thicken."}],"ingredients":[{"Soy sauce":{"amounts":{"amount":75,"unit":"ml"}}},{"Vegetable stock":{"amounts":{"amount":75,"unit":"ml"}}},{"Cornflour":{"amounts":{"amount":0.5,"unit":"tbsp"}}},{"Honey":{"amounts":{"amount":0.5,"unit":"tbsp"}}},{"Sesame seed oil":{"amounts":{"amount":0.5,"unit":"tsp"}}},{"Rice vinegar":{"amounts":{"amount":0.5,"unit":"tsp"}}},{"Grated ginger":{"amounts":{"amount":1,"unit":"Inch"}}},{"Grated garlic clove":{"amounts":{"amount":1,"unit":""}}}],"recipe_name":"Best Stir Fry Sauce"}
+{
+  "source_url": {
+    "name": "Tastes Lovely",
+    "url": "https:\/\/www.tasteslovely.com\/best-stir-fry-sauce\/"
+  },
+  "yields": {
+    "servings": 4
+  },
+  "steps": [
+    {
+      "step": "Mix all ingredients together."
+    },
+    {
+      "step": "Mix sauce into stir fry and cook for 3 minutes to allow the sauce to thicken."
+    }
+  ],
+  "ingredients": [
+    {
+      "Soy sauce": {
+        "amounts": {
+          "amount": 75,
+          "unit": "ml"
+        }
+      }
+    },
+    {
+      "Vegetable stock": {
+        "amounts": {
+          "amount": 75,
+          "unit": "ml"
+        }
+      }
+    },
+    {
+      "Cornflour": {
+        "amounts": {
+          "amount": 0.5,
+          "unit": "tbsp"
+        }
+      }
+    },
+    {
+      "Honey": {
+        "amounts": {
+          "amount": 0.5,
+          "unit": "tbsp"
+        }
+      }
+    },
+    {
+      "Sesame seed oil": {
+        "amounts": {
+          "amount": 0.5,
+          "unit": "tsp"
+        }
+      }
+    },
+    {
+      "Rice vinegar": {
+        "amounts": {
+          "amount": 0.5,
+          "unit": "tsp"
+        }
+      }
+    },
+    {
+      "Grated ginger": {
+        "amounts": {
+          "amount": 1,
+          "unit": "Inch"
+        }
+      }
+    },
+    {
+      "Grated garlic clove": {
+        "amounts": {
+          "amount": 1,
+          "unit": ""
+        }
+      }
+    }
+  ],
+  "recipe_name": "Best Stir Fry Sauce"
+}
