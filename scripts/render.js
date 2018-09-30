@@ -201,10 +201,23 @@ const render = async () => {
         return;
       }
 
+      let back;
+      const location = relPath.substr(0, relPath.lastIndexOf('/'));
+
+      if (location && fileName !== 'index') {
+        const backHref = `/${location}`;
+        const backTitle = backHref;
+        back = {
+          href: backHref,
+          title: backTitle,
+        };
+      }
+
       const html = baseTemplate({
         body,
         css,
         favicons,
+        back,
         JS: jsObj,
         meta: Object.keys(md.meta).length > 0 ? {
           ...md.meta,

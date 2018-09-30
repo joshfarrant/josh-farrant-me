@@ -23,6 +23,16 @@
         </div>
       </nav>
       <main>
+        {{#if back.href}}
+          <p>
+            <a
+              href="{{back.href}}"
+              title="{{back.title}}"
+            >
+              &lt; Back to {{back.title}}
+            </a>
+          </p>
+        {{/if}}
         {{#if meta}}
           {{#if meta.title}}
             <h2>{{meta.title}}</h2>
