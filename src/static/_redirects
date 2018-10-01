@@ -1,0 +1,6 @@
+# Redirect domain aliases to primary domain
+https://josh.farrant.me/* https://farrant.me/:splat 301!
+https://blog.farrant.me/* https://farrant.me/blog 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://farrant-me.netlify.com/* https://farrant.me/:splat 301!
