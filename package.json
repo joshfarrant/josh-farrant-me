@@ -10,7 +10,7 @@
     "develop": "node scripts/develop.js",
     "favicons": "node -e 'require(\"./scripts/favicons\").generate()'",
     "compress": "find build/. -type f \\( -name '*.js' -or -name '*.css' \\) -exec sh -c 'gzip -c \"{}\" > \"{}.gz\"' \\;",
-    "netlify": "NODE_ENV=production && npm i && npm run build"
+    "netlify": "npm i && npm run build"
   },
   "repository": {
     "type": "git",
