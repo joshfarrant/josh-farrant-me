@@ -22,6 +22,21 @@
   </p>
 {{/if}}
 
+
+<p>
+  {{#if prep_time}}
+    {{#if cook_time}}
+      Prep {{prep_time}} mins / Cook {{cook_time}} mins
+    {{else}}
+      Prep {{prep_time}} mins
+    {{/if}}
+  {{else}}
+    {{#if cook_time}}
+      Cook {{cook_time}} mins
+    {{/if}}
+  {{/if}}
+</p>
+
 {{#if ingredients}}
   <hr />
   <h3>Ingredients</h3>
@@ -35,7 +50,7 @@
   <ul>
     {{#each ingredients as |ingredient|}}
       {{#each ingredient as |values name|}}
-        <li>{{values.amounts.amount}} {{values.amounts.unit}} {{name}}</li>
+        <li>{{values.amounts.amount}} {{values.amounts.unit}} {{name}}{{#if values.amounts.processing}}, {{values.amounts.processing}}{{/if}}</li>
       {{/each}}
     {{/each}}
   </ul>

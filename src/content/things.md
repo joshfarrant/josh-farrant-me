@@ -27,9 +27,9 @@ There are a lot of _things_ out there; some are better than others. This is a li
 
 ### Tech 💾
 
-- Phone: **iPhone 8**
+- Phone: **iPhone XS Max**
 
-  I decided not to upgrade to the iPhone X and instead went for the 8. I've been incredibly happy with it, especially now that I'm living the case-less lifestyle.
+  Despite the awful name, this is an incredible phone. The XS Max is all about that fantastic, huge display, which makes using the phone a dream. I've owned a lot of iPhones, and it's been a long tine since I've liked one this much.
 
 - In-Ear Headphones: **AirPods**
 

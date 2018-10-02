@@ -186,6 +186,13 @@ const render = async () => {
         body = recipeTemplate({
           ...recipe,
         });
+      } else if (fileExtension === '.json') {
+        // JSON (recipe) files
+        const jsonFile = await readFile(file, 'utf8');
+        const recipe = JSON.parse(jsonFile);
+        body = recipeTemplate({
+          ...recipe,
+        });
       } else if (['.png', '.gif', '.jpg', '.jpeg'].includes(fileExtension)) {
         await ensureDirExists(dirName);
         await copyFilesInDir(file, outputPath);
@@ -194,10 +201,23 @@ const render = async () => {
         return;
       }
 
+      let back;
+      const location = relPath.substr(0, relPath.lastIndexOf('/'));
+
+      if (location && !['index', '-list'].includes(fileName)) {
+        const backHref = `/${location}`;
+        const backTitle = backHref;
+        back = {
+          href: backHref,
+          title: backTitle,
+        };
+      }
+
       const html = baseTemplate({
         body,
         css,
         favicons,
+        back,
         JS: jsObj,
         meta: Object.keys(md.meta).length > 0 ? {
           ...md.meta,

@@ -6,6 +6,11 @@ I'm still in the process of setting this up, so this list might look pretty bare
 
 ---
 
+### Baking
+
+- [Banana Bread with Walnuts](recipes/banana-bread)
+
 ### Sauces
 
 - [Hollandaise Sauce](recipes/hollandaise-sauce)
+- [Best Stir Fry Sauce](recipes/best-stir-fry-sauce)
