@@ -17,7 +17,7 @@
   ],
   "ingredients": [
     {
-      "Soy sauce": {
+      "soy sauce": {
         "amounts": {
           "amount": 75,
           "unit": "ml"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "Vegetable stock": {
+      "vegetable stock": {
         "amounts": {
           "amount": 75,
           "unit": "ml"
@@ -33,7 +33,7 @@
       }
     },
     {
-      "Cornflour": {
+      "cornflour": {
         "amounts": {
           "amount": 0.5,
           "unit": "tbsp"
@@ -41,7 +41,7 @@
       }
     },
     {
-      "Honey": {
+      "honey": {
         "amounts": {
           "amount": 0.5,
           "unit": "tbsp"
@@ -49,7 +49,7 @@
       }
     },
     {
-      "Sesame seed oil": {
+      "sesame seed oil": {
         "amounts": {
           "amount": 0.5,
           "unit": "tsp"
@@ -57,7 +57,7 @@
       }
     },
     {
-      "Rice vinegar": {
+      "rice vinegar": {
         "amounts": {
           "amount": 0.5,
           "unit": "tsp"
@@ -65,15 +65,15 @@
       }
     },
     {
-      "Grated ginger": {
+      "grated ginger": {
         "amounts": {
           "amount": 1,
-          "unit": "Inch"
+          "unit": "inch"
         }
       }
     },
     {
-      "Grated garlic clove": {
+      "grated garlic clove": {
         "amounts": {
           "amount": 1,
           "unit": ""
