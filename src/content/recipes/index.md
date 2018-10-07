@@ -13,4 +13,4 @@ I'm still in the process of setting this up, so this list might look pretty bare
 ### Sauces
 
 - [Hollandaise Sauce](recipes/hollandaise-sauce)
-- [Best Stir Fry Sauce](recipes/stir-fry-sauce)
+- [Stir Fry Sauce](recipes/stir-fry-sauce)
