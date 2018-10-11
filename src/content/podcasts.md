@@ -57,7 +57,7 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
 - **Serial**
 
-  Probably the most well-known podcasts on this list. Serial follows a reporter's journey as she looks into crimes, the people who committed them, and the people around them. I'd recommend Season 1 over Season 2.
+  Probably the most well-known podcast on this list. Serial follows a reporter's journey as she looks into crimes, the people who committed them, and the people around them. I'd recommend starting with Season 1, maybe skipping Season 2, then jumping back in with Season 3.
 
 - **Subnet**
 
