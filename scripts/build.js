@@ -11,6 +11,7 @@ const render = require('./render');
 const photos = require('./photos');
 const generateServiceWorker = require('./generateServiceWorker');
 const buildCss = require('./css');
+const buildJavascript = require('./javascript');
 const copyStaticDir = require('./copyStaticDir');
 
 module.exports = {
@@ -19,6 +20,7 @@ module.exports = {
     await ensureDirExists(ASSETS_DIR);
     await ensureDirExists(TEMP_DIR);
     await buildCss();
+    await buildJavascript();
     await generateServiceWorker();
     await photos.cloudinary();
     await render();
@@ -29,6 +31,7 @@ module.exports = {
     await ensureDirExists(ASSETS_DIR);
     await ensureDirExists(TEMP_DIR);
     await buildCss();
+    await buildJavascript();
     await generateServiceWorker();
     await photos.cloudinary();
     await render();
@@ -36,6 +39,9 @@ module.exports = {
   },
   css: async () => {
     await buildCss();
+  },
+  javascript: async () => {
+    await buildJavascript();
   },
   md: async () => {
     await render();

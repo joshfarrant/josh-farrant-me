@@ -9,7 +9,7 @@ const { writeFile } = require('./files');
 
 const render = util.promisify(sass.render);
 
-const buildSass = async () => {
+const buildCss = async () => {
   let result;
 
   try {
@@ -47,4 +47,4 @@ const buildSass = async () => {
   console.log('Combined and minified CSS');
 };
 
-module.exports = buildSass;
+module.exports = buildCss;

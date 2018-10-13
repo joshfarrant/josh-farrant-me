@@ -89,6 +89,24 @@ const uploadToCloudinary = async () => {
   const templateSrc = await readFile(FILES.TEMPLATES.SRC.BASE, 'utf8');
   const css = await readFile(FILES.STYLES.OUTPUT, 'utf8');
 
+  const jsArr = await Promise.all(
+    Object
+      .entries(FILES.JS.OUTPUT)
+      .map(async ([name, filePath]) => {
+        const file = await readFile(filePath, 'utf8');
+        return [
+          name,
+          file,
+        ];
+      }),
+  );
+
+  const javascript = jsArr
+    .reduce((a, [name, file]) => ({
+      ...a,
+      [name]: file,
+    }), {});
+
   const photosTemplate = Handlebars.compile(photosTemplateSrc);
   const template = Handlebars.compile(templateSrc);
 
@@ -112,6 +130,7 @@ const uploadToCloudinary = async () => {
       const html = template({
         body: photosHtml,
         css,
+        javascript,
       });
 
       const outputDir = `${FILES.PHOTOS.OUTPUT}/${folder}`;
