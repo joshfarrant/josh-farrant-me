@@ -27,6 +27,7 @@ I'm very happy with how both the generator, and this website, turned out. Now th
 
 Development of this site has been made **infinitely** easier thanks to the countless hours of hard work done by other developers that they have generously decided to open source and make available for free. My heartfelt thanks go out to the developers and maintainers of the following libraries.
 
+- [cloudinary](https://www.npmjs.com/package/cloudinary)
 - [emojione](https://www.npmjs.com/package/emojione)
 - [eslint](https://www.npmjs.com/package/eslint)
 - [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
@@ -42,7 +43,6 @@ Development of this site has been made **infinitely** easier thanks to the count
 - [prompt](https://www.npmjs.com/package/prompt)
 - [rimraf](https://www.npmjs.com/package/rimraf)
 - [typography](https://www.npmjs.com/package/typography)
-- [uuid](https://www.npmjs.com/package/uuid)
 - [yamljs](https://www.npmjs.com/package/yamljs)
 
 I also want to give special thanks to [Emojione](https://www.emojione.com/) for supplying the emoji icons I use on almost every page of the site.

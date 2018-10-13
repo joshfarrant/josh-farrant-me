@@ -1,12 +1,7 @@
 <div class="photos-container">
-  {{#each photos}}
-    <img
-      class="photo"
-      src={{{this}}}
-    />
+  {{#each photos as |photo|}}
+    <div class="photo">
+      {{{photo.thumbnail}}}
+    </div>
   {{/each}}
 </div>
-
-<script type="text/javascript">
-  alert('hi!');
-</script>

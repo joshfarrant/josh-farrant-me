@@ -1,7 +1,6 @@
 const {
   ASSETS_DIR,
   BUILD_DIR,
-  // PHOTOS_DIR,
   TEMP_DIR,
 } = require('./constants');
 const {
@@ -19,26 +18,22 @@ module.exports = {
   develop: async () => {
     await clearDir(BUILD_DIR);
     await ensureDirExists(ASSETS_DIR);
-    // await ensureDirExists(PHOTOS_DIR);
     await ensureDirExists(TEMP_DIR);
     await generateTypographyCss();
     await buildSass();
     await generateServiceWorker();
-    // await photos.copy();
-    // await photos.build();
+    await photos.cloudinary();
     await render();
     await copyStaticDir();
   },
   build: async () => {
     await clearDir(BUILD_DIR);
     await ensureDirExists(ASSETS_DIR);
-    // await ensureDirExists(PHOTOS_DIR);
     await ensureDirExists(TEMP_DIR);
     await generateTypographyCss();
     await buildSass();
     await generateServiceWorker();
-    // await photos.copy();
-    // await photos.build();
+    await photos.cloudinary();
     await render();
     await copyStaticDir();
   },
