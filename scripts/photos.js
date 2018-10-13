@@ -32,13 +32,7 @@ const cloudinaryListAll = async () => {
   let data = [];
   let isDone = false;
 
-
   while (!isDone) {
-    /**
-     * Allow await in loop as the output of the previous operation
-     * is an input to the next
-     */
-
     // eslint-disable-next-line no-await-in-loop
     const page = await cloudinary.resources({
       type: 'upload',
@@ -60,16 +54,7 @@ const cloudinaryListAll = async () => {
   return data;
 };
 
-const uploadToCloudinary = async () => {
-  /**
-   * Find albums
-   * Diff local album with Cloudiary album
-   * Upload/delete files as required
-   * Get album URL and store it somewhere (use when generating template)
-   * Generate template
-   * Save files
-   */
-
+module.exports = async () => {
   const list = await cloudinaryListAll();
 
   // Sort files into object of format { folderName: [filesArr] }
@@ -88,6 +73,7 @@ const uploadToCloudinary = async () => {
   const photosTemplateSrc = await readFile(FILES.TEMPLATES.SRC.PHOTOS, 'utf8');
   const templateSrc = await readFile(FILES.TEMPLATES.SRC.BASE, 'utf8');
   const css = await readFile(FILES.STYLES.OUTPUT, 'utf8');
+  const favicons = await readFile(FILES.FAVICONS.HTML, 'utf8');
 
   const jsArr = await Promise.all(
     Object
@@ -130,6 +116,7 @@ const uploadToCloudinary = async () => {
       const html = template({
         body: photosHtml,
         css,
+        favicons,
         javascript,
       });
 
@@ -142,8 +129,4 @@ const uploadToCloudinary = async () => {
     });
 
   await Promise.all(promises);
-};
-
-module.exports = {
-  cloudinary: uploadToCloudinary,
 };

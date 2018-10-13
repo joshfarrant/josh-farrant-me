@@ -8,7 +8,7 @@ const {
   ensureDirExists,
 } = require('./files');
 const render = require('./render');
-const photos = require('./photos');
+const buildPhotos = require('./photos');
 const generateServiceWorker = require('./generateServiceWorker');
 const buildCss = require('./css');
 const buildJavascript = require('./javascript');
@@ -22,7 +22,7 @@ module.exports = {
     await buildCss();
     await buildJavascript();
     await generateServiceWorker();
-    await photos.cloudinary();
+    await buildPhotos();
     await render();
     await copyStaticDir();
   },
@@ -33,7 +33,7 @@ module.exports = {
     await buildCss();
     await buildJavascript();
     await generateServiceWorker();
-    await photos.cloudinary();
+    await buildPhotos();
     await render();
     await copyStaticDir();
   },
@@ -45,12 +45,5 @@ module.exports = {
   },
   md: async () => {
     await render();
-  },
-  copyAndBuildPhotos: async () => {
-    await photos.copy();
-    await photos.build();
-  },
-  buildPhotosTemplates: async () => {
-    await photos.build();
   },
 };
