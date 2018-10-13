@@ -10,17 +10,15 @@ const {
 const render = require('./render');
 const photos = require('./photos');
 const generateServiceWorker = require('./generateServiceWorker');
-const buildSass = require('./sass');
+const buildCss = require('./css');
 const copyStaticDir = require('./copyStaticDir');
-const generateTypographyCss = require('./typography');
 
 module.exports = {
   develop: async () => {
     await clearDir(BUILD_DIR);
     await ensureDirExists(ASSETS_DIR);
     await ensureDirExists(TEMP_DIR);
-    await generateTypographyCss();
-    await buildSass();
+    await buildCss();
     await generateServiceWorker();
     await photos.cloudinary();
     await render();
@@ -30,15 +28,14 @@ module.exports = {
     await clearDir(BUILD_DIR);
     await ensureDirExists(ASSETS_DIR);
     await ensureDirExists(TEMP_DIR);
-    await generateTypographyCss();
-    await buildSass();
+    await buildCss();
     await generateServiceWorker();
     await photos.cloudinary();
     await render();
     await copyStaticDir();
   },
-  sass: async () => {
-    await buildSass();
+  css: async () => {
+    await buildCss();
   },
   md: async () => {
     await render();
@@ -49,8 +46,5 @@ module.exports = {
   },
   buildPhotosTemplates: async () => {
     await photos.build();
-  },
-  typography: async () => {
-    await generateTypographyCss();
   },
 };

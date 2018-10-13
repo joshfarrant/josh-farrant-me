@@ -87,6 +87,7 @@ const uploadToCloudinary = async () => {
 
   const photosTemplateSrc = await readFile(FILES.TEMPLATES.SRC.PHOTOS, 'utf8');
   const templateSrc = await readFile(FILES.TEMPLATES.SRC.BASE, 'utf8');
+  const css = await readFile(FILES.STYLES.OUTPUT, 'utf8');
 
   const photosTemplate = Handlebars.compile(photosTemplateSrc);
   const template = Handlebars.compile(templateSrc);
@@ -110,6 +111,7 @@ const uploadToCloudinary = async () => {
       });
       const html = template({
         body: photosHtml,
+        css,
       });
 
       const outputDir = `${FILES.PHOTOS.OUTPUT}/${folder}`;

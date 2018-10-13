@@ -1,7 +1,9 @@
 const util = require('util');
 
+const compressor = require('node-minify');
 const sass = require('node-sass');
 
+const generateTypographyCss = require('./typography');
 const { FILES } = require('./constants');
 const { writeFile } = require('./files');
 
@@ -29,6 +31,20 @@ const buildSass = async () => {
     console.error(`Error writing ${FILES.STYLES.OUTPUT} : ${writeErr}`);
     process.exit(1);
   }
+
+  await generateTypographyCss();
+
+  await compressor.minify({
+    compressor: 'clean-css',
+    input: [
+      // Order matters
+      FILES.TYPOGRAPHY.OUTPUT,
+      FILES.STYLES.OUTPUT,
+    ],
+    output: FILES.STYLES.OUTPUT,
+  });
+
+  console.log('Combined and minified CSS');
 };
 
 module.exports = buildSass;

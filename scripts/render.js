@@ -110,17 +110,7 @@ const render = async () => {
   const recipeTemplateSrc = await readFile(FILES.TEMPLATES.SRC.RECIPE, 'utf8');
   const recipeTemplate = Handlebars.compile(recipeTemplateSrc);
 
-  const css = await compressor.minify({
-    compressor: 'clean-css',
-    input: [
-      // Order matters
-      FILES.TYPOGRAPHY.OUTPUT,
-      FILES.STYLES.OUTPUT,
-    ],
-    output: FILES.STYLES.OUTPUT,
-  });
-
-  console.log('Combined and minified CSS');
+  const css = await readFile(FILES.STYLES.OUTPUT, 'utf8');
 
   // Compress all JS files
   const jsArr = await Promise.all(
