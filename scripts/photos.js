@@ -21,6 +21,14 @@ const {
 
 const SECRETS = require('../secrets');
 
+const thumbnailOptions = {
+  width: 200,
+  height: 200,
+  quality: 85,
+  crop: 'limit',
+  fetch_format: 'auto',
+};
+
 cloudinary.config({
   cloud_name: SECRETS.CLOUDINARY.CLOUD_NAME,
   api_key: SECRETS.CLOUDINARY.API_KEY,
@@ -101,13 +109,7 @@ module.exports = async () => {
     .map(async ([folder, files]) => {
       const photos = files.map(x => ({
         raw: x.secure_url,
-        thumbnail: cloudinary.image(x.public_id, {
-          width: 200,
-          height: 200,
-          quality: 85,
-          crop: 'limit',
-          fetch_format: 'auto',
-        }),
+        thumbnail: cloudinary.image(x.public_id, thumbnailOptions),
       }));
 
       const photosHtml = photosTemplate({
