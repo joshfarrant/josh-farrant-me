@@ -4,5 +4,4 @@ This is the repo for the website [https://josh.farrant.me](josh.farrant.me). It'
 
 ## Planned Features
 
-- [ ] Parse html of each page during build to see which styles are require, then only include those styles.
 - [ ] Autoprefix CSS

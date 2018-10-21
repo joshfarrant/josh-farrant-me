@@ -47,6 +47,7 @@
     "node-minify": "^3.4.0",
     "node-sass": "^4.9.3",
     "prompt": "^1.0.0",
+    "purify-css": "^1.2.5",
     "rimraf": "^2.6.2",
     "typography": "^0.16.17",
     "yamljs": "^0.3.0"
