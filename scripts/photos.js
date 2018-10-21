@@ -25,6 +25,7 @@ const thumbnailOptions = {
   quality: 85,
   crop: 'limit',
   fetch_format: 'auto',
+  secure: true,
 };
 
 cloudinary.config({
