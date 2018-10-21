@@ -1,6 +1,7 @@
 const path = require('path');
 const url = require('url');
 
+const compressor = require('node-minify');
 const emojione = require('emojione');
 const footnote = require('markdown-it-footnote');
 const Handlebars = require('handlebars');
@@ -9,7 +10,6 @@ const markdownIt = require('markdown-it')();
 const meta = require('markdown-it-meta');
 const moment = require('moment');
 const prism = require('markdown-it-prism');
-const purify = require('purify-css');
 const { readMarkdown } = require('node-md-meta-cataloger');
 const yaml = require('yamljs');
 
@@ -193,27 +193,9 @@ const render = async () => {
         };
       }
 
-      // Build complete html template (without styles)
-      const unstyledHtml = baseTemplate({
+      const html = baseTemplate({
         body,
-        favicons,
-        back,
-        javascript: jsObj,
-        meta: Object.keys(md.meta).length > 0 ? {
-          ...md.meta,
-          title: md.meta.title.replace('\\', ''),
-        } : false,
-      });
-
-      // Compare used html to style sheet and strip unused styles
-      const purifiedCss = purify(unstyledHtml, css, {
-        minify: true,
-      });
-
-      // Build complete html using only required styles
-      const styledHtml = baseTemplate({
-        body,
-        css: purifiedCss,
+        css,
         favicons,
         back,
         javascript: jsObj,
@@ -242,7 +224,7 @@ const render = async () => {
       }
 
       await ensureDirExists(path.dirname(modifiedOutputPath));
-      await writeFile(modifiedOutputPath, styledHtml);
+      await writeFile(modifiedOutputPath, html);
     });
   } catch (err) {
     console.error(`Error rendering markdown : ${err}`);
