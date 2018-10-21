@@ -78,22 +78,8 @@ a {
 
   &:hover,
   &:focus {
-    $padding: 2px;
-    position: relative;
-    padding: 0 $padding;
-    left: -$padding;
-    margin-right: -2 * $padding;
     background: var(--primary-colour);
     color: var(--background-colour);
-  }
-}
-
-sup a {
-  &:hover,
-  &:focus {
-    padding: 0;
-    left: 0;
-    margin-right: 0;
   }
 }
 
