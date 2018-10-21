@@ -19,8 +19,6 @@ const {
   writeFile,
 } = require('./files');
 
-const SECRETS = require('../secrets');
-
 const thumbnailOptions = {
   width: 200,
   height: 200,
@@ -30,9 +28,9 @@ const thumbnailOptions = {
 };
 
 cloudinary.config({
-  cloud_name: SECRETS.CLOUDINARY.CLOUD_NAME,
-  api_key: SECRETS.CLOUDINARY.API_KEY,
-  api_secret: SECRETS.CLOUDINARY.API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const cloudinaryListAll = async () => {

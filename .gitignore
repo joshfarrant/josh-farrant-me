@@ -1,6 +1,5 @@
 node_modules
 build
 temp
-secrets.js
 
 .DS_Store
