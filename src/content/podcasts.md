@@ -25,7 +25,7 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
 - **Cortex**
 
-  CGP Grey and Myke Hurley discuss all things productivity, as well as in life in general. It's way better than I'm making it sound here, trust me.
+  CGP Grey and Myke Hurley discuss all things productivity, as well as life in general. It's way better than I'm making it sound here, trust me.
 
 - **Hello Internet**
 
