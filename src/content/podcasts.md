@@ -53,7 +53,7 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
 - **Reply All**
 
-  Reply All is a difficult podcast to explain, but it's one of most interesting, and highest quality, podcasts that I listen to. This is one that I think absolutely anyone will enjoy.
+  Reply All is a difficult podcast to explain, but it's one of most interesting and highest quality podcasts that I listen to. This is one that I think absolutely anyone will enjoy.
 
 - **Serial**
 
