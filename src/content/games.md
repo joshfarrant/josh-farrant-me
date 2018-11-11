@@ -76,6 +76,9 @@ Games are listed under the system that I played them on, which isn't necessarily
 - **Stardew Valley**
 - **Into The Breach**
 
+### Xbox One X
+- **Red Dead Redemption 2**
+
 ### PC
 - **Stardew Valley**
 - **Into The Breach**
