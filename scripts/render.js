@@ -110,45 +110,25 @@ const render = async () => {
   const recipeTemplateSrc = await readFile(FILES.TEMPLATES.SRC.RECIPE, 'utf8');
   const recipeTemplate = Handlebars.compile(recipeTemplateSrc);
 
-  const css = await compressor.minify({
-    compressor: 'clean-css',
-    input: [
-      // Order matters
-      FILES.TYPOGRAPHY.OUTPUT,
-      FILES.STYLES.OUTPUT,
-    ],
-    output: FILES.STYLES.OUTPUT,
-  });
+  const css = await readFile(FILES.STYLES.OUTPUT, 'utf8');
 
-  console.log('Combined and minified CSS');
-
-  // Compress all JS files
   const jsArr = await Promise.all(
     Object
-      .entries(FILES.JS.SRC)
-      .map(async ([name, filePath]) => ([
-        name,
-        await compressor.minify({
-          compressor: 'uglify-es',
-          input: filePath,
-          output: FILES.JS.OUTPUT[name],
-        }),
-      ])),
+      .entries(FILES.JS.OUTPUT)
+      .map(async ([name, filePath]) => {
+        const file = await readFile(filePath, 'utf8');
+        return [
+          name,
+          file,
+        ];
+      }),
   );
 
-  /**
-   * Format the JS for the hbs template as follows:
-   * {
-   *   HEAD: 'minified main.js',
-   *   MAIN: 'minified head.js',
-   * }
-   */
-  const jsObj = jsArr.reduce((a, [name, minifiedFile]) => ({
-    ...a,
-    [name]: minifiedFile,
-  }), {});
-
-  console.log('Minified JavaScript');
+  const jsObj = jsArr
+    .reduce((a, [name, file]) => ({
+      ...a,
+      [name]: file,
+    }), {});
 
   const favicons = await copyFavicons();
 
@@ -218,7 +198,7 @@ const render = async () => {
         css,
         favicons,
         back,
-        JS: jsObj,
+        javascript: jsObj,
         meta: Object.keys(md.meta).length > 0 ? {
           ...md.meta,
           title: md.meta.title.replace('\\', ''),

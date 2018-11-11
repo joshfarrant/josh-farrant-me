@@ -1,7 +1,6 @@
 const {
   ASSETS_DIR,
   BUILD_DIR,
-  // PHOTOS_DIR,
   TEMP_DIR,
 } = require('./constants');
 const {
@@ -9,53 +8,42 @@ const {
   ensureDirExists,
 } = require('./files');
 const render = require('./render');
-const photos = require('./photos');
+const buildPhotos = require('./photos');
 const generateServiceWorker = require('./generateServiceWorker');
-const buildSass = require('./sass');
+const buildCss = require('./css');
+const buildJavascript = require('./javascript');
 const copyStaticDir = require('./copyStaticDir');
-const generateTypographyCss = require('./typography');
 
 module.exports = {
   develop: async () => {
     await clearDir(BUILD_DIR);
     await ensureDirExists(ASSETS_DIR);
-    // await ensureDirExists(PHOTOS_DIR);
     await ensureDirExists(TEMP_DIR);
-    await generateTypographyCss();
-    await buildSass();
+    await buildCss();
+    await buildJavascript();
     await generateServiceWorker();
-    // await photos.copy();
-    // await photos.build();
+    await buildPhotos();
     await render();
     await copyStaticDir();
   },
   build: async () => {
     await clearDir(BUILD_DIR);
     await ensureDirExists(ASSETS_DIR);
-    // await ensureDirExists(PHOTOS_DIR);
     await ensureDirExists(TEMP_DIR);
-    await generateTypographyCss();
-    await buildSass();
+    await buildCss();
+    await buildJavascript();
     await generateServiceWorker();
-    // await photos.copy();
-    // await photos.build();
+    await buildPhotos();
     await render();
     await copyStaticDir();
   },
-  sass: async () => {
-    await buildSass();
+  css: async () => {
+    await buildCss();
+  },
+  javascript: async () => {
+    await buildJavascript();
   },
   md: async () => {
     await render();
-  },
-  copyAndBuildPhotos: async () => {
-    await photos.copy();
-    await photos.build();
-  },
-  buildPhotosTemplates: async () => {
-    await photos.build();
-  },
-  typography: async () => {
-    await generateTypographyCss();
   },
 };

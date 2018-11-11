@@ -62,11 +62,11 @@ const CONSTANTS = {
     STYLES: {
       SRC: `${SRC_DIR}/styles`,
       SASS: `${SRC_DIR}/styles/style.scss`,
-      OUTPUT: `${ASSETS_DIR}/style.css`,
+      OUTPUT: `${TEMP_DIR}/style.css`,
     },
     TYPOGRAPHY: {
       SRC: `${SRC_DIR}/styles/typography.json`,
-      OUTPUT: `${ASSETS_DIR}/typography.css`,
+      OUTPUT: `${TEMP_DIR}/typography.css`,
     },
   },
 };

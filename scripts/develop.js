@@ -11,8 +11,8 @@ const {
   await build.develop();
 
   bs.watch(`${FILES.STYLES.SRC}/**/*.*`).on('change', async () => {
-    await build.sass();
-    await build.typography();
+    await build.css();
+    await build.javascript();
     await build.md(); // To inject styles again
     bs.reload();
   });

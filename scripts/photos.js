@@ -1,153 +1,133 @@
-const path = require('path');
 const util = require('util');
 
+const cloudinaryCb = require('cloudinary');
 const Handlebars = require('handlebars');
-const promptCb = require('prompt');
-const uuid = require('uuid/v4');
-// const {
-//   generateResponsiveImages,
-//   renameImagesToSize,
-// } = require('responsive-images-generator/lib');
 
-const promptGet = util.promisify(promptCb.get);
+const cloudinary = {
+  config: cloudinaryCb.config,
+  image: cloudinaryCb.image,
+  resources: util.promisify(cloudinaryCb.v2.api.resources),
+  upload: util.promisify(cloudinaryCb.v2.uploader.upload),
+};
 
 const {
   FILES,
-  PHOTOS_DIR,
 } = require('./constants');
 const {
-  clearDir,
-  copyFilesInDir,
   ensureDirExists,
-  getFiles,
   readFile,
   writeFile,
 } = require('./files');
-const { sleep } = require('./utils');
 
-// const imagesConfig = [
-//   { width: '20%', rename: { suffix: '@1x' } },
-//   { width: '40%', rename: { suffix: '@2x' } },
-//   { width: '60%', rename: { suffix: '@3x' } },
-//   { width: '80%', rename: { suffix: '@4x' } },
-//   { width: '100%', rename: { suffix: '@5x' } },
-// ];
-
-const buildPhotosTemplates = async () => {
-  const filesArr = await getFiles(FILES.PHOTOS.OUTPUT, false);
-  if (!Array.isArray(filesArr)) return;
-
-  filesArr.forEach(async (files) => {
-    if (!Array.isArray(files)) return;
-
-    const outputFiles = files.map(file => path.basename(file));
-
-    const photosTemplateSrc = await readFile(FILES.TEMPLATES.SRC.PHOTOS, 'utf8');
-    const templateSrc = await readFile(FILES.TEMPLATES.SRC.BASE, 'utf8');
-
-    const photosTemplate = Handlebars.compile(photosTemplateSrc);
-    const template = Handlebars.compile(templateSrc);
-    const photosHtml = photosTemplate({
-      photos: outputFiles,
-    });
-    const html = template({
-      body: photosHtml,
-    });
-
-    const dataPath = files.find(x => x.includes('data.json'));
-    const rawData = await readFile(dataPath, 'utf8');
-    const data = JSON.parse(rawData);
-
-    // We've got our html, now let's write it to the right place!
-    const outputHtmlPath = `${FILES.PHOTOS.OUTPUT}/${data.id}/index.html`;
-    await writeFile(outputHtmlPath, html);
-  });
+const thumbnailOptions = {
+  width: 200,
+  height: 200,
+  quality: 85,
+  crop: 'limit',
+  fetch_format: 'auto',
+  secure: true,
 };
 
-const copyPhotos = async () => {
-  const filesArr = await getFiles(FILES.PHOTOS.SRC, false);
-  if (!Array.isArray(filesArr)) return;
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
-  const promises = filesArr.map(async (files) => {
-    if (!Array.isArray(files)) {
-      return;
+const cloudinaryListAll = async () => {
+  let nextCursor;
+  let data = [];
+  let isDone = false;
+
+  while (!isDone) {
+    // eslint-disable-next-line no-await-in-loop
+    const page = await cloudinary.resources({
+      type: 'upload',
+      max_results: 2,
+      next_cursor: nextCursor,
+    });
+
+    data = [
+      ...data,
+      ...page.resources,
+    ];
+
+    nextCursor = page.next_cursor;
+    if (!nextCursor) {
+      isDone = true;
     }
+  }
 
-    if (files.length < 1) {
-      return;
-    }
+  return data;
+};
 
-    const relFiles = files.map(file => (
-      path.relative(FILES.PHOTOS.SRC, file)
-    ));
+module.exports = async () => {
+  const list = await cloudinaryListAll();
 
-    // Get the directory name
-    const { dir } = path.parse(relFiles[0]);
+  // Sort files into object of format { folderName: [filesArr] }
+  const sortedList = list.reduce((sorted, file) => {
+    const splitId = file.public_id.split('/');
+    const folder = splitId.length > 1 ? splitId[0] : 'uncategorized';
+    return {
+      ...sorted,
+      [folder]: [
+        ...(sorted[folder] || []),
+        file,
+      ],
+    };
+  }, {});
 
-    // Check for presence of data.json
-    const hasData = relFiles.includes(`${dir}/data.json`);
-    const jsonFilePath = path.join(FILES.PHOTOS.SRC, dir, 'data.json');
+  const photosTemplateSrc = await readFile(FILES.TEMPLATES.SRC.PHOTOS, 'utf8');
+  const templateSrc = await readFile(FILES.TEMPLATES.SRC.BASE, 'utf8');
+  const css = await readFile(FILES.STYLES.OUTPUT, 'utf8');
+  const favicons = await readFile(FILES.FAVICONS.HTML, 'utf8');
 
-    // If we've not got the file, let's build it
-    if (!hasData) {
-      promptCb.start();
+  const jsArr = await Promise.all(
+    Object
+      .entries(FILES.JS.OUTPUT)
+      .map(async ([name, filePath]) => {
+        const file = await readFile(filePath, 'utf8');
+        return [
+          name,
+          file,
+        ];
+      }),
+  );
 
-      // TODO Make this less hacky, currently required to let other logs run first
-      await sleep(100);
+  const javascript = jsArr
+    .reduce((a, [name, file]) => ({
+      ...a,
+      [name]: file,
+    }), {});
 
-      const { albumName } = await promptGet({
-        properties: {
-          albumName: {
-            description: 'Enter a name for the new album',
-            default: dir,
-            required: true,
-          },
-        },
+  const photosTemplate = Handlebars.compile(photosTemplateSrc);
+  const template = Handlebars.compile(templateSrc);
+
+  const promises = Object
+    .entries(sortedList)
+    .map(async ([folder, files]) => {
+      const photos = files.map(x => ({
+        raw: x.secure_url,
+        thumbnail: cloudinary.image(x.public_id, thumbnailOptions),
+      }));
+
+      const photosHtml = photosTemplate({
+        photos,
+      });
+      const html = template({
+        body: photosHtml,
+        css,
+        favicons,
+        javascript,
       });
 
-      const newData = {
-        id: uuid(),
-        albumName,
-        created: new Date(),
-      };
+      const outputDir = `${FILES.PHOTOS.OUTPUT}/${folder}`;
 
-      // Create the data.json
-      await writeFile(jsonFilePath, JSON.stringify(newData));
-    }
+      await ensureDirExists(outputDir);
 
-    // If we've got this far, we know we've got a data json file
-    const rawData = await readFile(jsonFilePath, 'utf8');
-    const data = JSON.parse(rawData);
+      const outputHtmlPath = `${outputDir}/index.html`;
+      return writeFile(outputHtmlPath, html);
+    });
 
-    const outputDir = `${PHOTOS_DIR}/${data.id}`;
-    await clearDir(outputDir);
-    await ensureDirExists(outputDir);
-    const srcDir = path.dirname(files[0]);
-
-    await copyFilesInDir(srcDir, outputDir);
-
-    // This is all the responsive img (srcset) stuff
-    // const images = files
-    //   .map(file => (
-    //     `${outputDir}/${path.basename(file)}`
-    //   ))
-    //   .filter(file => (
-    //     !file.includes('.json') && !file.includes('.html')
-    //   ));
-
-    // await generateResponsiveImages(images, imagesConfig);
-    // let responsiveImages = await getFiles(outputDir, false);
-    // responsiveImages = responsiveImages.filter(file => (
-    //   !file.includes('.json') && !file.includes('.html')
-    // ));
-    // await renameImagesToSize(responsiveImages, /(?:.*)(@[0-9]{0,10}x)$/);
-  });
-
-  // Wait for all the above code to run before returning
   await Promise.all(promises);
-};
-
-module.exports = {
-  copy: copyPhotos,
-  build: buildPhotosTemplates,
 };
