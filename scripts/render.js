@@ -93,10 +93,9 @@ const getFilesListMd = async (file) => {
     .sort((a, b) => b.published - a.published)
     .map(({
       href,
-      published,
       title,
     }) => (
-      `- [${title}](${href}) | ${moment(published).format('Do MMMM YYYY')}`
+      `- [${title}](${href})`
     ))
     .join('\n');
 
