@@ -62,6 +62,10 @@ const cloudinaryListAll = async () => {
 };
 
 module.exports = async () => {
+  if (!process.env.CLOUDINARY_CLOUD_NAME) {
+    return [];
+  }
+
   const list = await cloudinaryListAll();
 
   // Sort files into object of format { folderName: [filesArr] }
