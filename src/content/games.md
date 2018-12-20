@@ -75,6 +75,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 - **Super Mario Odyssey**
 - **Stardew Valley**
 - **Into The Breach**
+- **Pokémon: Let's Go, Pikachu!**
 
 ### Xbox One X
 - **Red Dead Redemption 2**
