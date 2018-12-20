@@ -2,6 +2,8 @@
  * Variables
  */
 
+$themes: light dark black;
+
 html {
   --primary-colour: #4169e1; // CSS royalblue
   --copy-colour: rgba(20, 35, 60, 1);
@@ -21,11 +23,12 @@ html {
 	--code-colour-background: #f6f8fa;
   --code-colour-comment: #969896;
 
-  &[data-theme="dark"] {
+  &[data-theme="dark"],
+  &[data-theme="black"] {
     --primary-colour: #ff79c6;
     --copy-colour: rgba(255, 255, 255, 1);
     --faded-copy-colour: rgba(255, 255, 255, 0.9);
-    --background-colour: #000;
+    --background-colour: #222;
     --off-background-colour: #545454;
 
     --code-colour-string: #F1FA8C;
@@ -37,6 +40,11 @@ html {
     --code-colour-property: #50fa7b;
     --code-colour-background: #333;
     --code-colour-comment: #969896;
+  }
+
+  &[data-theme="black"] {
+    --background-colour: #000;
+    --primary-colour: #ff4646;
   }
 }
 
@@ -176,7 +184,7 @@ $themeVisible: 1rem;
 
 .theme-toggle {
   position: fixed;
-  bottom: $themeVisible;
+  bottom: $themeHidden;
   right: $themeVisible;
   display: flex;
   flex-flow: row wrap;
@@ -185,27 +193,43 @@ $themeVisible: 1rem;
   width: 40px;
   height: 40px;
   outline: none;
+  opacity: 1;
   font-size: 2rem;
   font-family: serif;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: right .2s ease, bottom .2s ease;;
 }
 
-:root[data-theme="dark"] {
-  #light-theme-toggle {
-    bottom: $themeVisible;
-  }
-  #dark-theme-toggle {
-    right: $themeHidden;
-  }
-}
+@for $i from 1 through length($themes) {
+  $theme: nth($themes, $i);
 
-:root[data-theme="light"] {
-  #light-theme-toggle {
-    bottom: $themeHidden;
+  $prevThemeIdx: $i - 1;
+  @if ($prevThemeIdx < 1) {
+    $prevThemeIdx: length($themes);
   }
-  #dark-theme-toggle {
-    right: $themeVisible;
+
+  $nextThemeIdx: $i + 1;
+  @if ($nextThemeIdx > length($themes)) {
+    $nextThemeIdx: 1;
+  }
+
+  $prevTheme: nth($themes, $prevThemeIdx);
+  $nextTheme: nth($themes, $nextThemeIdx);
+
+  :root[data-theme="#{$theme}"] {
+    ##{$prevTheme}-theme-toggle {
+      opacity: 0;
+    }
+
+    ##{$theme}-theme-toggle {
+      right: $themeHidden;
+      bottom: $themeVisible;
+    }
+
+    ##{$nextTheme}-theme-toggle {
+      right: $themeVisible;
+      bottom: $themeVisible;
+    }
   }
 }
 

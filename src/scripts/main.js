@@ -1,6 +1,31 @@
 const THEMES = {
-  LIGHT: 'light',
-  DARK: 'dark',
+  LIGHT: {
+    NAME: 'light',
+    EMOJI: '💡',
+  },
+  DARK: {
+    NAME: 'dark',
+    EMOJI: '🕶',
+  },
+  BLACK: {
+    NAME: 'black',
+    EMOJI: '🔭',
+  },
+};
+
+const buildButtons = () => {
+  console.log('document: ', document);
+  const themeToggleContainer = document.getElementById('theme-toggle-container');
+
+  Object.values(THEMES)
+    .forEach((THEME) => {
+      const button = document.createElement('button');
+      button.setAttribute('id', `${THEME.NAME}-theme-toggle`);
+      button.setAttribute('class', 'theme-toggle button-reset');
+      button.setAttribute('title', `Switch to ${THEME.NAME} theme`);
+      button.textContent = THEME.EMOJI;
+      themeToggleContainer.appendChild(button);
+    });
 };
 
 const setTheme = (themeName) => {
@@ -17,15 +42,18 @@ const setInitialTheme = () => {
   if (localStorage.getItem('userChoseTheme')) return;
 
   const currentHour = new Date().getHours();
-  const themeName = (currentHour >= 19 || currentHour < 6) ? THEMES.DARK : THEMES.LIGHT;
+  const themeName = (currentHour >= 19 || currentHour < 6) ? THEMES.DARK.NAME : THEMES.LIGHT.NAME;
   setTheme(themeName);
 };
 
 const bindClickHandlers = () => {
-  document.getElementById('light-theme-toggle').onclick = () => selectTheme(THEMES.LIGHT);
-  document.getElementById('dark-theme-toggle').onclick = () => selectTheme(THEMES.DARK);
+  Object.values(THEMES)
+    .forEach((THEME) => {
+      document.getElementById(`${THEME.NAME}-theme-toggle`).onclick = () => selectTheme(THEME.NAME);
+    });
 };
 
+buildButtons();
 bindClickHandlers();
 
 try {
