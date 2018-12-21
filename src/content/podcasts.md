@@ -27,7 +27,7 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
   CGP Grey and Myke Hurley discuss all things productivity, as well as life in general. It's way better than I'm making it sound here, trust me.
 
-  - **Do By Friday**
+- **Do By Friday**
 
   A podcast from Max Temkin (Cards Against Humanity), Alex Cox, and Merlin Mann. The premise is that, each week, the three hosts have to complete a challenge before the next episode. The scope of the challenges varies quite a lot, and can be as simple as trying Kombucha or watching a terrible movie, to buying and consuming some of Alex Jones' powders or getting an NFC implant. Most shows, however, inevitably descend into discussions about whatever ~~ignorant~~ ~~idiotic~~ _just plain awful_ thing Trump did in the preceeding week.
 
