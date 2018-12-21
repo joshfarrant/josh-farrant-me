@@ -27,6 +27,10 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
   CGP Grey and Myke Hurley discuss all things productivity, as well as life in general. It's way better than I'm making it sound here, trust me.
 
+  - **Do By Friday**
+
+  A podcast from Max Temkin (Cards Against Humanity), Alex Cox, and Merlin Mann. The premise is that, each week, the three hosts have to complete a challenge before the next episode. The scope of the challenges varies quite a lot, and can be as simple as trying Kombucha or watching a terrible movie, to buying and consuming some of Alex Jones' powders or getting an NFC implant. Most shows, however, inevitably descend into discussions about whatever ~~ignorant~~ ~~idiotic~~ _just plain awful_ thing Trump did in the preceeding week.
+
 - **Hello Internet**
 
   The only podcast I know of with it's own flag^[[Flaggy Flag](http://flaggyflag.com/), the one true flag.] and Medal of Honor. CGP Grey and Brady Haran discuss YouTube, the internet, and anything else that may be relevant. From plane crashes to penguins, postcards to paper cuts, they have a corner for just about everything.
@@ -75,9 +79,9 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 These are the shows that I've only discovered relatively recently, and so I'm still working though a backlog of old episodes. If I'm not listening to one of the _Must-Listens_ above, then I'm listening to these.
 
 
-- **Do By Friday**
+- **Bear Brook**
 
-  I'm really enjoying this show at the moment. The premise is that, each week, the three hosts have to complete a challenge before the next episode. The scope of the challenges varies quite a lot, and can be as simple as trying Kombucha or watching a terrible movie, to buying and consuming some of Alex Jones' powders or getting an NFC implant. Most shows, however, inevitably descend into discussions about whatever ~~ignorant~~ ~~idiotic~~ _just plain awful_ thing Trump did in the preceeding week.
+  A true crime podcast about a murder case in New Hampshire. This Serial-esque show has so far presented a well told and captivating story that's keeping me hooked.
 
 - **Hello from the Magic Tavern**
 
