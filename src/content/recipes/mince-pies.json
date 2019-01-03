@@ -1,0 +1,88 @@
+{
+  "yields": {
+    "servings": 24
+  },
+  "cook_time": 12,
+  "prep_time": 20,
+  "steps": [
+    {
+      "step": "Heat the oven to 180°C."
+    },
+    {
+      "step": "Add the eggs to the sugar and lightly mix, just so the sugar starts to dissolve."
+    },
+    {
+      "step": "Grate the cold butter into the flour and rub it in with your fingers."
+    },
+    {
+      "step": "Add sugar and egg mixture to the flour mixture and mix gently until it just comes together. Be careful not to overwork the dough at this point."
+    },
+    {
+      "step": "Gently firm the dough into a ball with your hands. You may need a little more flour. It should be like a dry pasta dough, but not so dry that it can't be rolled."
+    },
+    {
+      "step": "Roll the dough out quite thinly, a few mm thick should do."
+    },
+    {
+      "step": "Use a cutter to cut the dough into circles and place into your baking tin."
+    },
+    {
+      "step": "Spoon a teaspoon or so of mixture into each mince pie."
+    },
+    {
+      "step": "Use a slightly smaller cutter to cut lids for the mince pies. Place a lid on each mince pie and gently crimp the edges to seal. Prick each lid with a fork to allow steam to escape."
+    },
+    {
+      "step": "Bake the mince pies for 10-12 minutes, 15 minutes at the absolute most as they colour quickly. The mince pies should be a light golden colour, not pale or dark."
+    },
+    {
+      "step": "Remove the mince pies from the tins and cool on a wire rack."
+    }
+  ],
+  "source_authors": [
+    "Steve Farrant"
+  ],
+  "ingredients": [
+    {
+      "plain flour": {
+        "amounts": {
+          "amount": 450,
+          "unit": "g"
+        }
+      }
+    },
+    {
+      "caster sugar": {
+        "amounts": {
+          "amount": 115,
+          "unit": "g"
+        }
+      }
+    },
+    {
+      "unsalted butter": {
+        "amounts": {
+          "amount": 280,
+          "unit": "g",
+          "processing": "chilled"
+        }
+      }
+    },
+    {
+      "medium eggs": {
+        "amounts": {
+          "amount": 2,
+          "unit": ""
+        }
+      }
+    }, {
+      "mincemeat": {
+        "amounts": {
+          "amount": 900,
+          "unit": "g"
+        }
+      }
+    }
+  ],
+  "recipe_name": "Mince Pies"
+}

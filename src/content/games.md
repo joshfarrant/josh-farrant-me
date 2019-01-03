@@ -74,6 +74,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 - **The Legend of Zelda: Breath of the Wild**
 - **Super Mario Odyssey**
 - **Stardew Valley**
+- **Celeste**
 - **Into The Breach**
 - **Pokémon: Let's Go, Pikachu!**
 
@@ -102,7 +103,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 
 ---
 
-### 🃏 Card games
+### 🃏 Card & board games
 
 I try to take a couple of decks of cards with me whenever I go away. Not all of these games can be played with a regular deck of cards, but they're all good fun nonetheless.
 
@@ -113,3 +114,5 @@ I try to take a couple of decks of cards with me whenever I go away. Not all of 
 - **Coup**
 - **Crib**
 - **Gin Rummy**
+- **Carcassonne**
+- **Jaipur**

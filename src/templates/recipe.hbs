@@ -22,6 +22,14 @@
   </p>
 {{/if}}
 
+{{#if source_authors}}
+  <p>
+    By
+    {{#each source_authors as |author|}}
+      {{author}}{{#unless @last}},{{else}}.{{/unless}}
+    {{/each}}
+  </p>
+{{/if}}
 
 <p>
   {{#if prep_time}}
