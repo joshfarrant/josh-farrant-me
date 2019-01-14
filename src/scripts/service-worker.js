@@ -1,4 +1,7 @@
-if (PRECACHE) {
+/* global PRECACHE self caches */
+/* eslint-disable no-restricted-globals */
+
+if (PRECACHE) { // PRECACHE is defined in build process
   /*
   Copyright 2016 Google Inc. All Rights Reserved.
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,13 +15,10 @@ if (PRECACHE) {
   limitations under the License.
   */
 
-  /* global self caches */
-  /* eslint-disable no-restricted-globals */
-
   // Names of the two caches used in this version of the service worker.
   // Change to v2, etc. when you update any of the local resources, which will
   // in turn trigger the install event again.
-  const RUNTIME = 'runtime';
+  const RUNTIME = 'v2';
 
   // A list of local resources we always want to be cached.
   const PRECACHE_URLS = [
