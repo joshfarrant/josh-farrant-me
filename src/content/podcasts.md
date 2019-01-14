@@ -15,6 +15,12 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
   My favourite podcast of them all. The Adventure Zone started life as a DnD podcast, but became so much more than that thanks to the masterful storytelling of the DM, Griffin McElroy. This is a podcast that anyone will enjoy, but if you're still unsure then I'd recommend just listening to the first 10 episodes; I'd be suprised if you're not hooked by then.
 
+
+- **Bear Brook**
+
+  A true crime podcast about a murder case in New Hampshire. This Serial-esque show told and captivating story that kept me hooked.
+
+
 - **The Besties (RIP)**
 
   Oh Besties, what a rollercoaster ride your past has been. From weekly, to cancelled, to monthly, to hiatus, to yearly, things have never been simple. Four games journalists, all originally at Polygon, debate the best games of the ~~week~~ ~~month~~ year.
@@ -78,10 +84,6 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
 These are the shows that I've only discovered relatively recently, and so I'm still working though a backlog of old episodes. If I'm not listening to one of the _Must-Listens_ above, then I'm listening to these.
 
-
-- **Bear Brook**
-
-  A true crime podcast about a murder case in New Hampshire. This Serial-esque show has so far presented a well told and captivating story that's keeping me hooked.
 
 - **Hello from the Magic Tavern**
 
