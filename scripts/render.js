@@ -1,14 +1,12 @@
 const path = require('path');
 const url = require('url');
 
-const compressor = require('node-minify');
 const emojione = require('emojione');
 const footnote = require('markdown-it-footnote');
 const Handlebars = require('handlebars');
 const handlebarsDateFormat = require('handlebars-dateformat');
 const markdownIt = require('markdown-it')();
 const meta = require('markdown-it-meta');
-const moment = require('moment');
 const prism = require('markdown-it-prism');
 const { readMarkdown } = require('node-md-meta-cataloger');
 const yaml = require('yamljs');

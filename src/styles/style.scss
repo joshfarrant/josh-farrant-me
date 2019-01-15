@@ -3,6 +3,7 @@
  */
 
 $themes: light dark black;
+$logoSize: 1.31951rem;
 
 html {
   --primary-colour: #4169e1; // CSS royalblue
@@ -121,6 +122,11 @@ strong {
   color: var(--copy-colour);
 }
 
+blockquote {
+  font-style: italic;
+  font-size: $logoSize;
+}
+
 /*
  * Utility class styles
  */
@@ -157,7 +163,7 @@ strong {
 }
 
 .logo {
-  font-size: 1.31951rem;
+  font-size: $logoSize;
 }
 
 nav .links {

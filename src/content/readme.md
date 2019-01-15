@@ -38,6 +38,7 @@ Development of this site has been made **infinitely** easier thanks to the count
 - [markdown-it-prism](https://www.npmjs.com/package/markdown-it-prism)
 - [mkdirp](https://www.npmjs.com/package/mkdirp)
 - [ncp](https://www.npmjs.com/package/ncp)
+- [node-md-meta-cataloger](https://www.npmjs.com/package/node-md-meta-cataloger)
 - [node-minify](https://www.npmjs.com/package/node-minify)
 - [node-sass](https://www.npmjs.com/package/node-sass)
 - [prompt](https://www.npmjs.com/package/prompt)
