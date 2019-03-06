@@ -1,0 +1,95 @@
+{
+  "yields": {
+    "servings": 4
+  },
+  "cook_time": 20,
+  "prep_time": 10,
+  "steps": [
+    {
+      "step": "Sweat the onions (without browning) in olive oil and the butter until soft. Add a splash of water if necessary."
+    },
+    {
+      "step": "Add the malt vinegar and sugar, then reduce for a minute."
+    },
+    {
+      "step": "Add the balsamic vinegar and cook for a couple of minutes."
+    },
+    {
+      "step": "Add the flour and the relish."
+    },
+    {
+      "step": "Cook for a few minutes more, then add the stock."
+    }
+  ],
+  "source_authors": [
+    "Steve Farrant"
+  ],
+  "ingredients": [
+    {
+      "onions": {
+        "amounts": {
+          "amount": 6,
+          "unit": "",
+          "processing": "sliced thinly"
+        }
+      }
+    },
+    {
+      "butter": {
+        "amounts": {
+          "amount": 40,
+          "unit": "g"
+        }
+      }
+    },
+    {
+      "vegetable stock": {
+        "amounts": {
+          "amount": 1,
+          "unit": "l"
+        }
+      }
+    },
+    {
+      "malt vinegar": {
+        "amounts": {
+          "amount": 3,
+          "unit": "tbsp"
+        }
+      }
+    },
+    {
+      "sugar": {
+        "amounts": {
+          "amount": 1,
+          "unit": "tbsp"
+        }
+      }
+    },
+    {
+      "balsamic vinegar": {
+        "amounts": {
+          "amount": 1,
+          "unit": "tbsp"
+        }
+      }
+    },
+    {
+      "plain flour": {
+        "amounts": {
+          "amount": 1,
+          "unit": "tbsp"
+        }
+      }
+    },
+    {
+      "Henderson's relish": {
+        "amounts": {
+          "amount": 1,
+          "unit": "splash"
+        }
+      }
+    }
+  ],
+  "recipe_name": "French Onion Soup"
+}
