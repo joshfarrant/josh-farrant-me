@@ -16,6 +16,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 
 ### SNES
 - **The Legend of Zelda: A Link to the Past**
+- **The Lost Vikings**
 - **Super Mario World 2: Yoshi's Island**
 - **Super Mario Bros. 3**
 
