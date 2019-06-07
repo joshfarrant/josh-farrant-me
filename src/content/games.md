@@ -116,3 +116,9 @@ I try to take a couple of decks of cards with me whenever I go away. Not all of 
 - **Gin Rummy**
 - **Carcassonne**
 - **Jaipur**
+
+### 🕗 To Play
+
+Games I've heard about that I'm hoping to look into.
+
+- **Outer Wilds**
