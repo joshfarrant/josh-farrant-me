@@ -15,3 +15,6 @@ I'm still in the process of setting this up, so this list might look pretty bare
 
 - [Hollandaise Sauce](recipes/hollandaise-sauce)
 - [Stir Fry Sauce](recipes/stir-fry-sauce)
+
+### Soups
+- [French Onion Soup](recipes/french-onion-soup)

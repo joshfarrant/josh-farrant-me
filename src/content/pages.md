@@ -2,6 +2,7 @@
 
 - [Books](/books)
 - [Code Snippets](/snippets)
+- [Drinks](/drinks)
 - [Games](/games)
 - [Podcasts](/podcasts)
 - [Races](/races)
