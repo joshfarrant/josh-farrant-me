@@ -33,6 +33,10 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
 
   CGP Grey and Myke Hurley discuss all things productivity, as well as life in general. It's way better than I'm making it sound here, trust me.
 
+- **Darknet Diaries**
+
+  A show about the dark side of the internet. Every two weeks Jack takes a deep dive into a specific hack, data breach, or other type of cyber crime.
+
 - **Do By Friday**
 
   A podcast from Max Temkin (Cards Against Humanity), Alex Cox, and Merlin Mann. The premise is that, each week, the three hosts have to complete a challenge before the next episode. The scope of the challenges varies quite a lot, and can be as simple as trying Kombucha or watching a terrible movie, to buying and consuming some of Alex Jones' powders or getting an NFC implant. Most shows, however, inevitably descend into discussions about whatever ~~ignorant~~ ~~idiotic~~ _just plain awful_ thing Trump did in the preceeding week.
@@ -89,6 +93,10 @@ These are the shows that I've only discovered relatively recently, and so I'm st
 
   A _completely fictional_ podcast about a game designer who finds himself in a strange, magical land after falling through a dimensional portal behind a Burger King. I'm working my way through Season 1 at the moment and I'm really enjoying the show so far. It's kind of like a two dudes talking show, if one of the dudes was a wizard, and there was also a talking badger, and it was set in a magical, fantastical land.
 
+
+- **Roderick on the Line**
+
+  John Roderick and Merlin Mann discuss life in a consistently good, easy listen.
 
 ---
 

@@ -9,6 +9,7 @@ Books I've read^[Or listened to in audiobook form with [Audible](https://www.aud
 - **Sherlock Holmes, The Definitive Collection**
 - **The Name of the Wind**
 - **The Wise Man's Fear**
+- **The Slow Regard of Silent Things**
 - **The Martian**
 - **American Kingpin**
 - **Elon Musk**
