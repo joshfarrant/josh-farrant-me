@@ -11,6 +11,7 @@ Books I've read^[Or listened to in audiobook form with [Audible](https://www.aud
 - **The Wise Man's Fear**
 - **The Slow Regard of Silent Things**
 - **The Martian**
+- **Good Omens**
 - **American Kingpin**
 - **Elon Musk**
 - **Ready Player One**
