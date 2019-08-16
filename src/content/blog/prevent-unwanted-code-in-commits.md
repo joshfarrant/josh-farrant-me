@@ -27,7 +27,7 @@ done
 exit
 ```
 
-This code should be added to the `.git/hooks` directory of your git project and named `precommit`.
+This code should be added to the `.git/hooks` directory of your git project and named `pre-commit`.
 
 The code above will be triggered every time you try to commit. Before the commit is initiated, it will look through a diff of your changes for the string `XXX` and, if it finds it, will cause the commit to fail with an appropriate error.
 
