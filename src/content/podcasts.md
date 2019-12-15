@@ -21,9 +21,9 @@ These are the shows I'm fully caught up on and listen to as soon as they come ou
   A true crime podcast about a murder case in New Hampshire. This Serial-esque show told and captivating story that kept me hooked.
 
 
-- **The Besties (RIP)**
+- **The Besties**
 
-  Oh Besties, what a rollercoaster ride your past has been. From weekly, to cancelled, to monthly, to hiatus, to yearly, things have never been simple. Four games journalists, all originally at Polygon, debate the best games of the ~~week~~ ~~month~~ year.
+  Oh Besties, what a rollercoaster ride your past has been. From weekly, to cancelled, to monthly, to hiatus, to yearly, things have never been simple. Four games journalists, all originally at Polygon, debate the best games of the ~~week~~ ~~month~~ ~~year~~ I have no idea any more.
 
 - **The Complete Guide To Everything**
 

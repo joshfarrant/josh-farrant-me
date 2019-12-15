@@ -61,7 +61,8 @@ There are a lot of _things_ out there; some are better than others. This is a li
 - Editor/Terminal Typeface: **Hæck**
 - Design Tool: **Sketch**
 - Browser: **Firefox Developer Edition**
-- Task Management: **Omnifocus 3**
+- Task Management: **It's complicated**
 - Podcast Player: **Overcast**
 - Note-taking: **Bear**
+- Personal Wiki: **Notion**
 - iOS Git Client: **Working Copy**

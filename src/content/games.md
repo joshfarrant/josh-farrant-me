@@ -81,6 +81,7 @@ Games are listed under the system that I played them on, which isn't necessarily
 
 ### Xbox One X
 - **Red Dead Redemption 2**
+- **Outer Wilds**
 
 ### PC
 - **Stardew Valley**
@@ -122,4 +123,4 @@ I try to take a couple of decks of cards with me whenever I go away. Not all of 
 
 Games I've heard about that I'm hoping to look into.
 
-- **Outer Wilds**
+- **Nothing right now**
