@@ -7,5 +7,5 @@
 - [Podcasts](/podcasts)
 - [Races](/races)
 - [Recipes](/recipes)
-- [Things I Use](/things)
+- [Things I Use](/uses)
 - [This Website](/readme)
