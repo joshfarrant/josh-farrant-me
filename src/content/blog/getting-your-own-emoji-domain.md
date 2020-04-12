@@ -47,3 +47,7 @@ The lovely [Kaleigh Rodgers](http://kaleighrogers.com/) from [Motherboard](http:
 ### Update 2 (24/6/17)
 
 It looks like there's now an easier way to get your own Emoji domain courtesy of Shane Brunswick. He has created [Domainoji.com](https://domainoji.com/) to simplify the Emoji domain finding and registration process. I've not had chance to try it myself yet, but it certainly looks like it makes the whole process of finding an available Emoji domain a lot easier.
+
+### Update 3 (12/4/20)
+
+The emoji domain 🖥☕️.ws no longer redirects to this blog. After leaving it active for a few years I decided to let the domain lapse.
