@@ -44,7 +44,7 @@
     "ncp": "^2.0.0",
     "node-md-meta-cataloger": "^1.2.2",
     "node-minify": "^3.4.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "prompt": "^1.0.0",
     "rimraf": "^2.6.2",
     "typography": "^0.16.17",
