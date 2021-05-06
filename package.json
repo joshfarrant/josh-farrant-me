@@ -34,7 +34,7 @@
     "cloudinary": "^1.11.0",
     "emojione": "^4.0.0",
     "favicons": "^5.2.0",
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.7.7",
     "handlebars-dateformat": "^1.1.1",
     "markdown-it": "^8.4.2",
     "markdown-it-footnote": "^3.0.1",
