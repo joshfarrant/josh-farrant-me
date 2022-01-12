@@ -36,7 +36,7 @@
     "favicons": "^5.2.0",
     "handlebars": "^4.0.12",
     "handlebars-dateformat": "^1.1.1",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-meta": "0.0.1",
     "markdown-it-prism": "^1.1.2",
